@@ -1,39 +1,45 @@
 /*
-  Sensor Shirt
-  Kylie Dale and Michael Guida
+ * Sensor Shirt
+ * Kylie Dale and Michael Guida
  */
+ 
 const int backPin = 0;
 const int shoulderPin = 1;
 const int underarmPin = 2;
 
-int backValue = null;
-int shoulderValue = null;
-int underarmValue = null;
+int backValue = -1;
+int lShoulderValue = -1;
+int rShoulderValue = -1;
+int lUnderarmValue = -1;
+int rUnderarmValue = -1;
 
-String pos = "Plank";
+int pos = 'Plank';
 
 void setup() {
   Serial.begin(9600);
+  delay(1000);
+  setVariables();
 }
 
 void loop() {
   backValue = analogRead(backPin);
-  shoulderValue = analogRead(shoulderPin);
-  underarmValue = analogRead(underarmValue);
+  rShoulderValue = analogRead(shoulderPin);
+  rUnderarmValue = analogRead(underarmPin);
   
-  println(checkPosition());
+  //println(checkPosition());
   
   delay(300);
 }
-
+/*
 boolean checkPosition(){
-  case(pos) {
-    case "Plank":
+  switch(pos) {
+    case 'Plank':
       if (armFwdRight90() && backStraight()){
         return true;
       } else { return false; }
     default:
-      println("Invalid Position");
+      Serial.println("Invalid Position");
       break;
   }
 }
+*/
