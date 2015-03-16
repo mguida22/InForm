@@ -17,8 +17,8 @@ int pos = 'Plank';
 
 void setup() {
   Serial.begin(9600);
-  delay(1000);
-  setVariables();
+  while(!Serial) {} // wait for serial port to connect
+  setVariables(); 
 }
 
 void loop() {
