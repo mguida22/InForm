@@ -209,8 +209,10 @@ int backBentBUnderTol = -1;
 void setVariables(){
   
   // -------- Arms at side --------
-  Serial.println("Put your arms at your side \nPress enter when ready");
-  Serial.read();
+  Serial.println("Put your arms at your side \nPress button when ready");
+  
+  //wait for button press
+  while(digitalRead(buttonPin) != 1){}
   
   armSRBackVal = -1;
   armSRShoulderVal = -1;
@@ -220,8 +222,13 @@ void setVariables(){
   armSLShoulderVal = -1;
   armSLUnderVal = -1;
   
+  delay(250);
+  
   // -------- Arms at side 45 degrees --------
-  Serial.println("Put your arms 45 degrees to your side \nPress enter when ready");
+  Serial.println("Put your arms 45 degrees to your side \nPress button when ready");
+  
+  //wait for button press
+  while(digitalRead(buttonPin) != 1){}
   
   armSR45BackVal = -1;
   armSR45ShoulderVal = -1;
@@ -231,8 +238,13 @@ void setVariables(){
   armSL45ShoulderVal = -1;
   armSL45UnderVal = -1;
 
+  delay(250);
+  
   // -------- Arms at side 90 degrees --------
-  Serial.println("Put your arms 90 degrees to your side \nPress enter when ready");
+  Serial.println("Put your arms 90 degrees to your side \nPress button when ready");
+  
+  //wait for button press
+  while(digitalRead(buttonPin) != 1){}
   
   armSR90BackVal = -1;
   armSR90ShoulderVal = -1;
@@ -242,8 +254,13 @@ void setVariables(){
   armSL90ShoulderVal = -1;
   armSL90UnderVal = -1;
 
+  delay(250);
+  
   // -------- Arms at side 135 degrees --------
-  Serial.println("Put your arms 135 degrees to your side \nPress enter when ready");
+  Serial.println("Put your arms 135 degrees to your side \nPress button when ready");
+  
+  //wait for button press
+  while(digitalRead(buttonPin) != 1){}
   
   armSR135BackVal = -1;
   armSR135ShoulderVal = -1;
@@ -253,8 +270,13 @@ void setVariables(){
   armSL135ShoulderVal = -1;
   armSL135UnderVal = -1;
 
+  delay(250);
+  
   // -------- Arms at side 180 degrees --------
-  Serial.println("Put your arms 180 degrees to your side \nPress enter when ready");
+  Serial.println("Put your arms 180 degrees to your side \nPress button when ready");
+  
+  //wait for button press
+  while(digitalRead(buttonPin) != 1){}
   
   armSR180BackVal = -1;
   armSR180ShoulderVal = -1;
@@ -265,7 +287,10 @@ void setVariables(){
   armSL180UnderVal = -1;
 
   // -------- Arms fwd 45 degrees --------
-  Serial.println("Put your arms 45 degrees forward \nPress enter when ready");
+  Serial.println("Put your arms 45 degrees forward \nPress button when ready");
+  
+  //wait for button press
+  while(digitalRead(buttonPin) != 1){}
   
   armFR45BackVal = -1;
   armFR45ShoulderVal = -1;
@@ -274,9 +299,14 @@ void setVariables(){
   armFL45BackVal = -1;
   armFL45ShoulderVal = -1;
   armFL45UnderVal = -1;
-
+  
+  delay(250);
+  
   // -------- Arms fwd 90 degrees --------
-  Serial.println("Put your arms 90 degrees forward \nPress enter when ready");
+  Serial.println("Put your arms 90 degrees forward \nPress button when ready");
+  
+  //wait for button press
+  while(digitalRead(buttonPin) != 1){}
   
   armFR90BackVal = -1;
   armFR90ShoulderVal = -1;
@@ -286,8 +316,13 @@ void setVariables(){
   armFL90ShoulderVal = -1;
   armFL90UnderVal = -1;
 
+  delay(250);
+  
   // -------- Arms fwd 135 degrees --------
-  Serial.println("Put your arms 135 degrees forward \nPress enter when ready");
+  Serial.println("Put your arms 135 degrees forward \nPress button when ready");
+  
+  //wait for button press
+  while(digitalRead(buttonPin) != 1){}
   
   armFR135BackVal = -1;
   armFR135ShoulderVal = -1;
@@ -296,9 +331,14 @@ void setVariables(){
   armFL135BackVal = -1;
   armFL135ShoulderVal = -1;
   armFL135UnderVal = -1;
+  
+  delay(250);
 
   // -------- Arms fwd 180 degrees --------
-  Serial.println("Put your arms 180 degrees forward \nPress enter when ready");
+  Serial.println("Put your arms 180 degrees forward \nPress button when ready");
+  
+  //wait for button press
+  while(digitalRead(buttonPin) != 1){}
   
   armFR180BackVal = -1;
   armFR180ShoulderVal = -1;
@@ -307,25 +347,41 @@ void setVariables(){
   armFL180BackVal = -1;
   armFL180ShoulderVal = -1;
   armFL180UnderVal = -1;
+  
+  delay(250);
 
   // -------- Back straight --------
-  Serial.println("Stand as straight as possible \nPress enter when ready");
+  Serial.println("Stand as straight as possible \nPress button when ready");
+  
+  //wait for button press
+  while(digitalRead(buttonPin) != 1){}
   
   backStraightBackVal = -1;
   backStraightShoulderVal = -1;
   backStraightUnderVal = -1;
 
+  delay(250);
+  
   // -------- Back bent fwd --------
-  Serial.println("Bend forward and touch your toes \nPress enter when ready");
+  Serial.println("Bend forward and touch your toes \nPress button when ready");
+  
+  //wait for button press
+  while(digitalRead(buttonPin) != 1){}
   
   backBentFBackVal = -1;
   backBentFShoulderVal = -1;
   backBentFUnderVal = -1;
   
+  delay(250);
+  
   // -------- Back bent back --------
-  Serial.println("Bend backward \nPress enter when ready");
+  Serial.println("Bend backward \nPress button when ready");
+  
+  //wait for button press
+  while(digitalRead(buttonPin) != 1){}
   
   backBentBBackVal = -1;
   backBentBShoulderVal = -1;
   backBentBUnderVal = -1;
+  delay(250);
 }

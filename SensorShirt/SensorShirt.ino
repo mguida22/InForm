@@ -3,9 +3,10 @@
  * Kylie Dale and Michael Guida
  */
  
-const int backPin = 0;
-const int shoulderPin = 1;
-const int underarmPin = 2;
+const int backPin = 14;
+const int shoulderPin = 15;
+const int underarmPin = 16;
+const int buttonPin = 0;
 
 int backValue = -1;
 int lShoulderValue = -1;
@@ -17,8 +18,9 @@ int pos = 'Plank';
 
 void setup() {
   Serial.begin(9600);
-  while(!Serial) {} // wait for serial port to connect
-  setVariables(); 
+  pinMode(buttonPin, INPUT);
+  while (!Serial){}
+  setVariables();
 }
 
 void loop() {
