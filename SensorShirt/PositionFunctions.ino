@@ -1,17 +1,10 @@
 /*
-<<<<<<< HEAD
-  Position Functions
-  Kylie Dale and Michael Guida
-*/
-/*
-=======
  * Position Functions
  * Kylie Dale and Michael Guida
  */
-
+/*
 // ------------------------ Right ------------------------
 
->>>>>>> origin/master
 boolean armAtSideRight() {
   if(backValue > (armSRBackVal - armSRBackTol) && backValue < (armSRBackVal + armSRBackTol)) {
     if(rShoulderValue > (armSRShoulderVal - armSRShoulderTol) && rShoulderValue < (armSRShoulderVal + armSRShoulderTol)) {
@@ -189,9 +182,6 @@ boolean armFwdLeft90() {
   }
   return false;
 }
-<<<<<<< HEAD
-*/
-=======
 
 boolean armFwdLeft135() {
   if(backValue > (armFL135BackVal - armFL135BackTol) && backValue < (armFL135BackVal + armFL135BackTol)) {
@@ -249,4 +239,4 @@ boolean backBentBack() {
   }
   return false;
 }
->>>>>>> origin/master
+*/
