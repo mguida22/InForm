@@ -2,7 +2,7 @@
   Position Functions
   Kylie Dale and Michael Guida
 */
-
+/*
 boolean armAtSideRight() {
   if(backValue > (armSRBackVal - armSRBackTol) && backValue < (armSRBackVal + armSRBackTol)) {
     if(shoulderValue > (armSRShoulderVal - armSRShoulderTol) && shoulderValue < (armSRShoulderVal + armSRShoulderTol)) {
@@ -134,3 +134,4 @@ boolean backBentBack() {
   }
   return false;
 }
+*/
