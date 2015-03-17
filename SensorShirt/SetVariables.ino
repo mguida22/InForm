@@ -205,8 +205,37 @@ int backBentBBackTol = -1;
 int backBentBShoulderTol = -1;
 int backBentBUnderTol = -1;
 
+// --------------------------------------------
+
+int * computeAvg(){
+  int i = 100;
+  int backSum = 0;
+  int rShoulderSum = 0;
+  int lShoulderSum = 0;
+  int rUnderarmSum = 0;
+  int lUnderarmSum = 0;
+  
+  while (i > 0){
+    if (i % 20 == 0) {
+      Serial.println(i / 20);
+    }
+    
+    backSum += analogRead(backPin);
+    rShoulderSum += analogRead(shoulderPin);
+    rUnderarmSum += analogRead(underarmPin);
+    
+    i--;
+    delay(50);
+  }
+  
+  int ret[6] = {backSum/100, rShoulderSum/100, rUnderarmSum/100, backSum/100, lShoulderSum/100, lUnderarmSum/100};
+  return ret;
+}
 
 void setVariables(){
+  
+  //setup
+  int *avgs;
   
   // -------- Arms at side --------
   Serial.println("Put your arms at your side \nPress button when ready");
@@ -214,13 +243,15 @@ void setVariables(){
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  armSRBackVal = -1;
-  armSRShoulderVal = -1;
-  armSRUnderVal = -1;
+  avgs = computeAvg();
+  
+  armSRBackVal = avgs[0];
+  armSRShoulderVal = avgs[1];
+  armSRUnderVal = avgs[2];
 
-  armSLBackVal = -1;
-  armSLShoulderVal = -1;
-  armSLUnderVal = -1;
+  armSLBackVal = avgs[3];
+  armSLShoulderVal = avgs[4];
+  armSLUnderVal = avgs[5];
   
   delay(250);
   
@@ -230,13 +261,15 @@ void setVariables(){
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  armSR45BackVal = -1;
-  armSR45ShoulderVal = -1;
-  armSR45UnderVal = -1;
+  avgs = computeAvg();
+  
+  armSR45BackVal = avgs[0];
+  armSR45ShoulderVal = avgs[1];
+  armSR45UnderVal = avgs[2];
 
-  armSL45BackVal = -1;
-  armSL45ShoulderVal = -1;
-  armSL45UnderVal = -1;
+  armSL45BackVal = avgs[3];
+  armSL45ShoulderVal = avgs[4];
+  armSL45UnderVal = avgs[5];
 
   delay(250);
   
@@ -246,13 +279,15 @@ void setVariables(){
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  armSR90BackVal = -1;
-  armSR90ShoulderVal = -1;
-  armSR90UnderVal = -1;
+  avgs = computeAvg();
   
-  armSL90BackVal = -1;
-  armSL90ShoulderVal = -1;
-  armSL90UnderVal = -1;
+  armSR90BackVal = avgs[0];
+  armSR90ShoulderVal = avgs[1];
+  armSR90UnderVal = avgs[2];
+  
+  armSL90BackVal = avgs[3];
+  armSL90ShoulderVal = avgs[4];
+  armSL90UnderVal = avgs[5];
 
   delay(250);
   
@@ -262,13 +297,15 @@ void setVariables(){
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  armSR135BackVal = -1;
-  armSR135ShoulderVal = -1;
-  armSR135UnderVal = -1;
+  avgs = computeAvg();
   
-  armSL135BackVal = -1;
-  armSL135ShoulderVal = -1;
-  armSL135UnderVal = -1;
+  armSR135BackVal = avgs[0];
+  armSR135ShoulderVal = avgs[1];
+  armSR135UnderVal = avgs[2];
+  
+  armSL135BackVal = avgs[3];
+  armSL135ShoulderVal = avgs[4];
+  armSL135UnderVal = avgs[5];
 
   delay(250);
   
@@ -278,13 +315,15 @@ void setVariables(){
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  armSR180BackVal = -1;
-  armSR180ShoulderVal = -1;
-  armSR180UnderVal = -1;
+  avgs = computeAvg();
   
-  armSL180BackVal = -1;
-  armSL180ShoulderVal = -1;
-  armSL180UnderVal = -1;
+  armSR180BackVal = avgs[0];
+  armSR180ShoulderVal = avgs[1];
+  armSR180UnderVal = avgs[2];
+  
+  armSL180BackVal = avgs[3];
+  armSL180ShoulderVal = avgs[4];
+  armSL180UnderVal = avgs[5];
 
   // -------- Arms fwd 45 degrees --------
   Serial.println("Put your arms 45 degrees forward \nPress button when ready");
@@ -292,13 +331,15 @@ void setVariables(){
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  armFR45BackVal = -1;
-  armFR45ShoulderVal = -1;
-  armFR45UnderVal = -1;
+  avgs = computeAvg();
   
-  armFL45BackVal = -1;
-  armFL45ShoulderVal = -1;
-  armFL45UnderVal = -1;
+  armFR45BackVal = avgs[0];
+  armFR45ShoulderVal = avgs[1];
+  armFR45UnderVal = avgs[2];
+  
+  armFL45BackVal = avgs[3];
+  armFL45ShoulderVal = avgs[4];
+  armFL45UnderVal = avgs[5];
   
   delay(250);
   
@@ -308,13 +349,15 @@ void setVariables(){
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  armFR90BackVal = -1;
-  armFR90ShoulderVal = -1;
-  armFR90UnderVal = -1;
+  avgs = computeAvg();
   
-  armFL90BackVal = -1;
-  armFL90ShoulderVal = -1;
-  armFL90UnderVal = -1;
+  armFR90BackVal = avgs[0];
+  armFR90ShoulderVal = avgs[1];
+  armFR90UnderVal = avgs[2];
+  
+  armFL90BackVal = avgs[3];
+  armFL90ShoulderVal = avgs[4];
+  armFL90UnderVal = avgs[5];
 
   delay(250);
   
@@ -324,13 +367,15 @@ void setVariables(){
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  armFR135BackVal = -1;
-  armFR135ShoulderVal = -1;
-  armFR135UnderVal = -1;
+  avgs = computeAvg();
   
-  armFL135BackVal = -1;
-  armFL135ShoulderVal = -1;
-  armFL135UnderVal = -1;
+  armFR135BackVal = avgs[0];
+  armFR135ShoulderVal = avgs[1];
+  armFR135UnderVal = avgs[2];
+  
+  armFL135BackVal = avgs[3];
+  armFL135ShoulderVal = avgs[4];
+  armFL135UnderVal = avgs[5];
   
   delay(250);
 
@@ -340,13 +385,15 @@ void setVariables(){
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  armFR180BackVal = -1;
-  armFR180ShoulderVal = -1;
-  armFR180UnderVal = -1;
+  avgs = computeAvg();
   
-  armFL180BackVal = -1;
-  armFL180ShoulderVal = -1;
-  armFL180UnderVal = -1;
+  armFR180BackVal = avgs[0];
+  armFR180ShoulderVal = avgs[1];
+  armFR180UnderVal = avgs[2];
+  
+  armFL180BackVal = avgs[3];
+  armFL180ShoulderVal = avgs[4];
+  armFL180UnderVal = avgs[5];
   
   delay(250);
 
@@ -356,9 +403,9 @@ void setVariables(){
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  backStraightBackVal = -1;
-  backStraightShoulderVal = -1;
-  backStraightUnderVal = -1;
+  avgs = computeAvg();
+  
+  backStraightBackVal = avgs[0];
 
   delay(250);
   
@@ -368,9 +415,9 @@ void setVariables(){
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  backBentFBackVal = -1;
-  backBentFShoulderVal = -1;
-  backBentFUnderVal = -1;
+  avgs = computeAvg();
+  
+  backBentFBackVal = avgs[0];
   
   delay(250);
   
@@ -380,8 +427,9 @@ void setVariables(){
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  backBentBBackVal = -1;
-  backBentBShoulderVal = -1;
-  backBentBUnderVal = -1;
+  avgs = computeAvg();
+  
+  backBentBBackVal = avgs[0];
+  
   delay(250);
 }
