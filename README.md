@@ -1,10 +1,14 @@
 # Sensor Shirt
-A shirt that measures body position
+A shirt that helps you learn yoga by giving live feedback on your body position compared to the correct form. 
 
 ## Setup
 
+The Teensy 3.1 was used as the microcontroller for the sensor shirt. To run this just like an Arduino board, you will need to download the Teensyduino software on your computer, which can be downloaded from https://www.pjrc.com/teensy/td_download.html. 
+
+From there you can start Arduino and select the correct board you are using. For the first time run, you will have to "Verify" the code and then press the button on the Teensy when prompted to program the code. 
+
 <!-- TODO: create package.json file for all required node libraries -->
-There are some libraries and packages required to run the sensor shirt. First you will need to have Node.js installed on your computer, which you can download from http://nodejs.org.
+There are also some libraries and packages required to run the sensor shirt. First you will need to have Node.js installed on your computer, which you can download from http://nodejs.org.
 
 After installing node, or if you already have it, in your command line run each of the following commands to install all required packages.
 
