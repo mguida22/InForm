@@ -1,6 +1,19 @@
 # Sensor Shirt
 A shirt that measures body position
 
+## Setup
+
+<!-- TODO: create package.json file for all required node libraries -->
+There are some libraries and packages required to run the sensor shirt. First you will need to have Node.js installed on your computer, which you can download from http://nodejs.org.
+
+After installing node, or if you already have it, in your command line run each of the following commands to install all required packages.
+
+```
+$ npm express
+$ npm socket.io
+$ npm serialport
+```
+
 ## Using Position Functions
 The position functions can be used to build up complete positions.
 
