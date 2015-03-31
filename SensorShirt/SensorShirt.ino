@@ -29,9 +29,10 @@ void loop() {
   rUnderarmValue = analogRead(underarmPin);
   
   //println(checkPosition());
-  
+  //Serial.println("100");
   delay(300);
 }
+
 /*
 boolean checkPosition(){
   switch(pos) {
