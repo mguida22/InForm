@@ -22,13 +22,13 @@ $ npm serialport
 The position functions can be used to build up complete positions.
 
 For example to assert if the users right arm is raised at 90 degrees forward: 
-```
+```C
 armFwdRight90();
 ```
 This will return a boolean value of true or false based off of the users position.
 
 We can use these simple position functions to build a more complex position such as the plank:
-```
+```C
 boolean plank() {
   if (armFwdRight90() && armFwdLeft90() && backStraight()) {
     return true;
