@@ -17,8 +17,19 @@ $ npm express
 $ npm socket.io
 $ npm serialport
 ```
+## Running the Web Page
+
+To run the web page using node first check you have all the modules installed. Next from the root of the directorty navigate to the nodeSerialServer directory and run the following command. You will need to replace /dev/tty.usbmodem728331 with the port you are using. The port can be seen at the bottom right corner of the standard Arduino editor.
+
+```
+$ cd nodeSerialServer/
+$ node SerialServer.js /dev/tty.usbmodem728331
+```
+
+The server will now be running and you can view index.html by navigating to `http://localhost:8080` in your browser. To stop the server simply type 'control-c' in your cmd line. 
 
 ## Using Position Functions
+
 The position functions can be used to build up complete positions.
 
 For example to assert if the users right arm is raised at 90 degrees forward: 

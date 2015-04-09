@@ -1,4 +1,7 @@
 /*
+	from http://www.tigoe.com/pcomp/code/arduinowiring/1096/
+	to run: node SerialServer.js /dev/tty.usbmodem728331 (replace with your device port)
+
 	serialServer.js
 	a node.js app to read serial strings and send them to webSocket clients
 	requires:
