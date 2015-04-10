@@ -19,10 +19,10 @@ $ npm serialport
 ```
 ## Running the Web Page
 
-To run the web page using node first check you have all the modules installed. Next from the root of the directorty navigate to the nodeSerialServer directory and run the following command. You will need to replace /dev/tty.usbmodem728331 with the port you are using. The port can be seen at the bottom right corner of the standard Arduino editor.
+To run the web page using node first check you have all the modules installed. Next from the root of the directorty navigate to the web directory and run the following command. You will need to replace /dev/tty.usbmodem728331 with the port you are using. The port can be seen at the bottom right corner of the standard Arduino editor.
 
 ```
-$ cd nodeSerialServer/
+$ cd web/
 $ node SerialServer.js /dev/tty.usbmodem728331
 ```
 
