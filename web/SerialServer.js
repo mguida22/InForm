@@ -1,4 +1,10 @@
 /*
+ * SerialServer.js
+ * Kylie Dale and Michael Guida
+ */
+
+
+/*
 	from http://www.tigoe.com/pcomp/code/arduinowiring/1096/
 	to run: node SerialServer.js /dev/tty.usbmodem728331 (replace with your device port)
 
@@ -14,7 +20,7 @@
 	modified 11 Feb 2014
 	by Tom Igoe
 	Patches and improvements suggested by Steve Klise, Lia Martinez, and Will Jennings
-	*/
+*/
 
 var serialport = require("serialport"),			// include the serialport library
 	SerialPort  = serialport.SerialPort,			// make a local instance of serial
@@ -25,13 +31,15 @@ var serialport = require("serialport"),			// include the serialport library
 	server = http.createServer(app),
 	io = require('socket.io').listen(server);
 
-	app.get('/', function (req, res) {
-  		res.sendFile(__dirname + '/index.html');
-	});
+app.get('/', function (req, res) {
+	res.sendFile(__dirname + '/public/index.html');
+});
 
-	server.listen(8080, function(){
-		console.log("Express server listening on port " + 8080);
-	});
+app.use(express.static(__dirname, 'public'));
+
+server.listen(8080, function(){
+	console.log("Express server listening on port " + 8080);
+});
 /*
 var io = require("socket.io").listen(server)
 

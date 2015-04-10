@@ -20,7 +20,16 @@ void setup() {
   Serial.begin(9600);
   pinMode(buttonPin, INPUT);
   while (!Serial){}
-  setVariables();
+  //setVariables();
+  testing();
+}
+
+void testing() {
+  int i = 0;
+  for (i=0; i<1000; i++){
+    Serial.println(i);
+    delay(100);
+  }
 }
 
 void loop() {
