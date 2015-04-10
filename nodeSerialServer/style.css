@@ -1,5 +1,28 @@
-h5 {
+/*
+ * style.css
+ * Kylie Dale and Michael Guida
+ */
+
+#pose {
 	color: #5db85b;
+}
+
+.form-control::-webkit-input-placeholder {
+	color: #5db85b;
+}
+.form-control:-moz-placeholder {
+	color: #5db85b;
+}
+.form-control::-moz-placeholder {
+	color: #5db85b;
+}
+.form-control:-ms-input-placeholder {
+	color: #5db85b;
+}
+
+.form-control:focus {
+  border-color: #5db85b;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(93, 184, 91, 0.6);
 }
 
 .page-header>p {

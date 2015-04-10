@@ -1,4 +1,5 @@
 Kylie Dale and Michael Guida
+University of Colorado
 2015
 
 # Sensor Shirt
@@ -73,17 +74,17 @@ We compiled this table of information below (accurate as of 2/2015) on the top t
 
 To run the Teensy using like an Arduino manufactured board, we downloaded the Teensyduino software from [prjc](https://www.pjrc.com/teensy/td_download.html). Once the software was downloaded, sketches can be run like normal. One exception is the first time running a sketch requires a manual reboot of the Teensy when prompted from the Teensyduino software.
 
-| Uno (8 bit)          | LilyPad (8 bit)        | Teensy 3.1 (32 bit) |
-| -------------------- | ---------------------- | ------------------- |
-| 1 KB ROM             | 0.5 KB ROM             | 2 KB EEPROM         |
-| 16 MHz CPU speed     | 8 MHz CPU speed        | 72 MHz CPU speed    |
-| USB Native           | FTDI-Compatible Header | USB Native          |
-| 7-12 V               | 2.7-5.5 V              | 3.3 V               |
-| 6 analog inputs      | 6 analog inputs        | 21 analog inputs    |
-| 14 digital I/O       | 14 digital I/O         | 34 digital I/O      |
-| 1 KB SRAM            | 1 KB SRAM              | 64 KB RA            |
-| 16 KB flash          | 16 KB flash            | 256 KB flash        |
-| large for wearable   | small enough to wear   | very small          |
+Uno (8 bit)          | LilyPad (8 bit)        | Teensy 3.1 (32 bit)
+-------------------- | ---------------------- | -------------------
+1 KB ROM             | 0.5 KB ROM             | 2 KB EEPROM
+16 MHz CPU speed     | 8 MHz CPU speed        | 72 MHz CPU speed
+USB Native           | FTDI-Compatible Header | USB Native
+7-12 V               | 2.7-5.5 V              | 3.3 V
+6 analog inputs      | 6 analog inputs        | 21 analog inputs
+14 digital I/O       | 14 digital I/O         | 34 digital I/O
+1 KB SRAM            | 1 KB SRAM              | 64 KB RA
+16 KB flash          | 16 KB flash            | 256 KB flash
+large for wearable   | small enough to wear   | very small
 
 ###Competitors
 <!--TODO: write -->
