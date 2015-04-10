@@ -9,6 +9,7 @@ A shirt that helps you learn yoga by giving live feedback on your body position 
 <!--TODO-MG: link to headings-->
 
 - Inspiration
+- Applications
 - Goals
 	- MVP
 	- Full Plans
@@ -21,7 +22,10 @@ A shirt that helps you learn yoga by giving live feedback on your body position 
 - Software Implementation
 
 ##Inspiration
-<!--TODO: write -->
+<!--TODO-KD: write -->
+
+##Applications
+<!--TODO-KD: write -->
 
 ##Goals
 
