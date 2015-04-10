@@ -4,9 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Sensor Shirt</title>
-		<script src="/socket.io/socket.io.js"></script>
-		<!--<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">-->
+		<!--<script src="/socket.io/socket.io.js"></script>-->
+
+		<!-- JQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -17,10 +18,9 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-		<!-- JQuery -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
 		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<script type="text/javascript" src="Process.js"></script>
 	</head>
 
 	<body>
@@ -32,20 +32,25 @@
 		  	<div class="row">
 			    <div class="col-sm-4" id="selectPose">
 			      	<h3>Select a Pose</h3>
+
+
 					<form role="form">
 						<div class="radio">
-					    	<label><input type="radio" name="optradio">Plank</label>
+					    	<label><input type="radio" name="currentPose" value="plank">Plank</label>
 					    </div>
 					    <div class="radio">
-					    	<label><input type="radio" name="optradio">Mountain Pose</label>
+					    	<label><input type="radio" name="currentPose" value="mountainPose">Mountain Pose</label>
 					    </div>
 					    <div class="radio">
-					      	<label><input type="radio" name="optradio">Downward Dog</label>
+					      	<label><input type="radio" name="currentPose" value="downwardDog">Downward Dog</label>
 					    </div>
 					   	<div class="radio">
-					      	<label><input type="radio" name="optradio">Warrior</label>
+					      	<label><input type="radio" name="currentPose" value="warrior">Warrior</label>
 					    </div>
 					</form>
+
+					<button type="button" class="btn btn-success" onclick="runPose()">Try it!</button>
+
 					<div class="row">
 					    <div class="col-sm-12" id="buildPose">
 					    	<h3>Build Your Own Pose</h3>
@@ -114,15 +119,16 @@
 			    </div>
 			    <div class="col-sm-8" id="feedback">
 			      	<h3>Feedback</h3>
+			      		<div id="content" align="center">
+							And the latest is:
+						<div id="textDisplay">Text will show up here</div>
+						</div>
 			      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing el amet, consectetur adipisicing el amet, consectetur adipisicing elit...</p>
 			      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing el amet, consectetur adipisicing el amet, consectetur adipisicing elit...</p>
 			      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing el amet, consectetur adipisicing el amet, consectetur adipisicing elit...</p>
 			      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing el amet, consectetur adipisicing el amet, consectetur adipisicing elit...</p>
-				    <p>Ut enim ad minim veniam, quis nostrud exercitation ullam amet, consectetur adipisicing el amet, consectetur adipisicing elco laboris...</p>
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing el amet, consectetur adipisicing el amet, consectetur adipisicing elit...</p>
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing el amet, consectetur adipisicing el amet, consectetur adipisicing elit...</p>
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing el amet, consectetur adipisicing el amet, consectetur adipisicing elit...</p>
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing el amet, consectetur adipisicing el amet, consectetur adipisicing elit...</p>
+			      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing el amet, consectetur adipisicing el amet, consectetur adipisicing elit...</p>
+			      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing el amet, consectetur adipisicing el amet, consectetur adipisicing elit...</p>
 			    </div>
 
 
@@ -131,10 +137,3 @@
 		</div>
 	</body>
 </html>
-
-<!-- 
-		<div id="content" align="center">
-			And the latest is:
-			<div id="textDisplay">Text will show up here</div>
-		</div>
--->
