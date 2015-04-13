@@ -66,5 +66,4 @@ void parseJSON(String content) {
   } else {
     Serial.println("parseObject() succeeded");
   }
-  content = "";
 }

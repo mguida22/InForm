@@ -14,7 +14,7 @@ socket.on('serialEvent', function (data) {
 //Builds JSON object from selected pose
 function runPose() {
 	var currentPose = $('input[name="currentPose"]:checked').val();
-	console.log(currentPose);
+	//console.log(currentPose);
 
 	//builds current pose's JSON
 	if (currentPose == 'plank') {

@@ -105,3 +105,7 @@ large for wearable   | small enough to wear   | very small
 
 ##Software Implementation
 <!--TODO-MG: write, add code snippets, api calls-->
+<!-- 
+	discuss serialport - server - client site connection
+	make diagram of the interactions from user input to displayed feedback
+-->
