@@ -70,6 +70,7 @@ void parseJSON(String content) {
   
   //Build JSON to return
   JsonObject& out = jsonBuffer.createObject();
+  out["type"] = "out";
   out["name"] = in["name"];
   //Evaluate
   if (strcmp(in["leftArm"], "fwd45")==0) {

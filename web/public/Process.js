@@ -7,7 +7,7 @@
 socket.on('serialEvent', function (data) {
 	// set the stuff inside the element's HTML tags to
 	// whatever the 'value' property of the received data is:
-	//console.log(data);
+	console.log('incoming' + data);
 	textDisplay.innerHTML = data;
 });
 
@@ -19,6 +19,7 @@ function runPose() {
 	//builds current pose's JSON
 	if (currentPose == 'plank') {
 		pose = {
+			'type': 'in',
 			'name': 'plank',
 			'leftArm': 'fwd90',
 			'rightArm': 'fwd90',
@@ -26,6 +27,7 @@ function runPose() {
 		};
 	} else if (currentPose == 'mountainPose') {
 		pose = {
+			'type': 'in',
 			'name': 'mountainPose',
 			'leftArm': 'fwd180',
 			'rightArm': 'fwd180',
@@ -33,6 +35,7 @@ function runPose() {
 		};
 	} else if (currentPose == 'downwardDog') {
 		pose = {
+			'type': 'in',
 			'name': 'downwardDog',
 			'leftArm': 'fwd180',
 			'rightArm': 'fwd180',
@@ -40,6 +43,7 @@ function runPose() {
 		};
 	} else if (currentPose == 'warrior') {
 		pose = {
+			'type': 'in',
 			'name': 'warrior',
 			'leftArm': 'side90',
 			'rightArm': 'side90',
@@ -47,7 +51,7 @@ function runPose() {
 		};
 	}
 
-	console.log(pose);
+	console.log('outgoing' + pose);
 
 	//send pose data to server
 	socket.emit('data', pose);
