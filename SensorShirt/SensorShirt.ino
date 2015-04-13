@@ -17,7 +17,9 @@ int rShoulderValue = -1;
 int lUnderarmValue = -1;
 int rUnderarmValue = -1;
 
-StaticJsonBuffer<200> jsonBuffer;
+//Could potentially take up too much memory
+DynamicJsonBuffer jsonBuffer;
+boolean updated = false;
 
 void setup() {
   Serial.begin(9600);
@@ -45,17 +47,24 @@ void loop() {
   while(Serial.available()) {
       character = Serial.read();
       content.concat(character);
+      updated = true;
   }
 
-  if (content != "") {
-    Serial.println(content);
-    JsonObject& root = jsonBuffer.parseObject(const_cast<char*>(content.c_str()));
-    
-    if (!root.success()) {
-      Serial.println("parseObject() failed");
-      return;
-    } else {
-      Serial.println("parseObject() succeeded");
-    }
+  if (updated) {
+    parseJSON(content);
   }
+}
+
+void parseJSON(String content) {
+  updated = false;
+  Serial.println(content);
+  JsonObject& root = jsonBuffer.parseObject(const_cast<char*>(content.c_str()));
+  
+  if (!root.success()) {
+    Serial.println("parseObject() failed");
+    return;
+  } else {
+    Serial.println("parseObject() succeeded");
+  }
+  content = "";
 }
