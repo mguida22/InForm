@@ -23,7 +23,7 @@
 */
 
 var serialport = require("serialport"),			// include the serialport library
-	SerialPort  = serialport.SerialPort,			// make a local instance of serial
+	SerialPort  = serialport.SerialPort,		// make a local instance of serial
 	portName = process.argv[2],					// third word of the command line should be serial port name
 	express = require('express'),
 	http = require('http'),

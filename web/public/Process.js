@@ -7,8 +7,7 @@
 socket.on('serialEvent', function (data) {
 	// set the stuff inside the element's HTML tags to
 	// whatever the 'value' property of the received data is:
-	console.log("Process.js");
-	console.log(data);
+	//console.log(data);
 	textDisplay.innerHTML = data;
 });
 
@@ -17,6 +16,7 @@ function runPose() {
 	var currentPose = $('input[name="currentPose"]:checked').val();
 	console.log(currentPose);
 
+	//builds current pose's JSON
 	if (currentPose == 'plank') {
 		pose = {
 			'name': 'plank',
@@ -49,7 +49,8 @@ function runPose() {
 
 	console.log(pose);
 
-	sendToArduino(pose);
+	//send pose data to server
+	socket.emit('data', pose);
 }
 
 //TODO-MG: send the pose JSON Object to Arduino
