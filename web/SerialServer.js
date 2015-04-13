@@ -29,7 +29,8 @@ var serialport = require("serialport"),			// include the serialport library
 	http = require('http'),
 	app = express(),
 	server = http.createServer(app),
-	io = require('socket.io').listen(server);
+	io = require('socket.io').listen(server),
+	connected = false;
 
 app.get('/', function (req, res) {
 	res.sendFile(__dirname + '/public/index.html');
@@ -49,6 +50,10 @@ var myPort = new SerialPort(portName, {
 
 // listen for new socket.io connections:
 io.sockets.on('connection', function (socket) {
+	// notify when connected
+	console.log('connected');
+	connected = true;
+	
 	// if there's a socket client, listen for new serial data:
 	myPort.on('data', function (data) {
 		// for debugging, you should see this in Terminal:
@@ -57,9 +62,17 @@ io.sockets.on('connection', function (socket) {
 		socket.emit('serialEvent', data);
 	});
 
+	// notify when disconnected
+	socket.on('disconnect', function() {
+		console.log('disconnected');
+		connected = false;
+	});
+
 	// if the client sends you data, act on it:
 	socket.on('data', function(data) {
+		data = JSON.stringify(data);
 		console.log('received from client: ' + data);
 		myPort.write(data);
+		//myPort.write('hello world');
 	});
 });
