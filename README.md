@@ -17,6 +17,9 @@ $ npm express
 $ npm socket.io
 $ npm serialport
 ```
+
+You will also need to install an Arduino library called [ArduinoJson](https://github.com/bblanchon/ArduinoJson). Follow the instructions on the ArduinoJson repository wiki to [use the library with Arduino](https://github.com/bblanchon/ArduinoJson/wiki/Using%20the%20library%20with%20Arduino) to get it set up.
+
 ## Running the Server and Web Page
 
 To run the server and web page first check you have all of the modules installed. The order of the next few steps is very important so make sure to follow them exactly.
