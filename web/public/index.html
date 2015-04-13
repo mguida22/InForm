@@ -8,6 +8,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Sensor Shirt</title>
+		<!-- Socket.io -->
 		<script src="/socket.io/socket.io.js"></script>
 
 		<!-- JQuery -->
@@ -23,6 +24,11 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="/public/style.css">
+
+		<script type="text/javascript">
+			// open a connection to the serial server:
+			var socket = io.connect('http://localhost:8080');
+		</script>
 
 		<script type="text/javascript" src="/public/Process.js"></script>
 	</head>

@@ -21,14 +21,13 @@ void setup() {
   pinMode(buttonPin, INPUT);
   while (!Serial){}
   //setVariables();
-  testing();
 }
 
 void testing() {
   int i = 0;
   for (i=0; i<1000; i++){
     Serial.println(i);
-    delay(100);
+    delay(300);
   }
 }
 
@@ -36,6 +35,8 @@ void loop() {
   backValue = analogRead(backPin);
   rShoulderValue = analogRead(shoulderPin);
   rUnderarmValue = analogRead(underarmPin);
+  
+  testing();
   
   //println(checkPosition());
   //Serial.println("100");

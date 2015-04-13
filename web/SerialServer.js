@@ -40,13 +40,6 @@ app.use(express.static(__dirname, 'public'));
 server.listen(8080, function(){
 	console.log("Express server listening on port " + 8080);
 });
-/*
-var io = require("socket.io").listen(server)
-
-	io.set('log level', 1);
-	
-	console.log(io.settings.logger.level);
-	*/
 
 // open the serial port using the name entered on the command line:
 var myPort = new SerialPort(portName, {
@@ -54,14 +47,12 @@ var myPort = new SerialPort(portName, {
 	parser: serialport.parsers.readline("\r\n")
 });
 
-//app.use(express.static(__dirname + '/public'));
-
 // listen for new socket.io connections:
 io.sockets.on('connection', function (socket) {
 	// if there's a socket client, listen for new serial data:
 	myPort.on('data', function (data) {
 		// for debugging, you should see this in Terminal:
-		//console.log(data);
+		console.log(data);
 		// send a serial event to the web client with the data:
 		socket.emit('serialEvent', data);
 	});
