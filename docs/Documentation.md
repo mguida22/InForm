@@ -23,6 +23,13 @@ A shirt that helps you learn yoga by giving live feedback on your body position 
 
 ##Inspiration
 <!--TODO-KD: write -->
+<!--A story, 
+ - We enrolled in Sport and Play
+ - Wanted to include some type of hardware or wearables
+ - While in the process of brainstorming ideas, we realized we could fill the need for a personal trainer using wearable technology such the shirt we have created
+ - We figured with the introduction of our idea into excersize, we could help people learn the correct form without having to have someone else there to give feedback on their positioning
+ - In this way, they could avoid the cost of a personal trainer, and still improve 
+-->
 
 ##Applications
 <!--TODO-KD: write -->
