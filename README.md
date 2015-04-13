@@ -17,16 +17,21 @@ $ npm express
 $ npm socket.io
 $ npm serialport
 ```
-## Running the Web Page
+## Running the Server and Web Page
 
-To run the web page using node first check you have all the modules installed. Next from the root of the directorty navigate to the web directory and run the following command. You will need to replace /dev/tty.usbmodem728331 with the port you are using. The port can be seen at the bottom right corner of the standard Arduino editor.
+To run the server and web page first check you have all of the modules installed. The order of the next few steps is very important so make sure to follow them exactly.
+
+First run the code on your microcontroller. On the Teensy 3.1 you should be able to press the physical reset button, but running the sketch from the Arduino IDE will always work. 
+
+Once that is running, start your server from the web directory using the following command. Replace the third argument, `/dev/tty.usbmodem728331`, with the port of your arduino. This can be found on the bottom right of the standard Arduino IDE.
 
 ```
-$ cd web/
 $ node SerialServer.js /dev/tty.usbmodem728331
 ```
 
-The server will now be running and you can view index.html by navigating to `http://localhost:8080` in your browser. To stop the server simply type 'control-c' in your cmd line. 
+The server will now be running on `http://localhost:8080`. Open up a browser and navigate to that address, or if you have the page loaded already, be sure to refresh.
+
+To stop the server, simply type control-c in your terminal.
 
 ## Using Position Functions
 
