@@ -52,8 +52,3 @@ function runPose() {
 	//send pose data to server
 	socket.emit('data', pose);
 }
-
-//TODO-MG: send the pose JSON Object to Arduino
-function sendToArduino(pose) {
-	console.log('Not yet implemented');
-}

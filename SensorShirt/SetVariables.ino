@@ -19,8 +19,8 @@ int * computeAvg(){
     }
     
     backSum += analogRead(backPin);
-    rShoulderSum += analogRead(shoulderPin);
-    rUnderarmSum += analogRead(underarmPin);
+    rShoulderSum += analogRead(rShoulderPin);
+    rUnderarmSum += analogRead(rUnderarmPin);
     
     i--;
     delay(50);
