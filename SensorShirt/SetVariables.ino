@@ -3,8 +3,6 @@
  * Kylie Dale and Michael Guida
  */
 
-#include "Variables.h";
-
 int * computeAvg(){
   int i = 100;
   int backSum = 0;
