@@ -56,8 +56,6 @@ io.sockets.on('connection', function (socket) {
 	
 	// if there's a socket client, listen for new serial data:
 	myPort.on('data', function (data) {
-		// for debugging, you should see this in Terminal:
-		//console.log(data);
 		// send a serial event to the web client with the data:
 		socket.emit('serialEvent', data);
 	});
@@ -71,8 +69,6 @@ io.sockets.on('connection', function (socket) {
 	// if the client sends you data, act on it:
 	socket.on('data', function(data) {
 		data = JSON.stringify(data);
-		//console.log('received from client: ' + data);
 		myPort.write(data);
-		//myPort.write('hello world');
 	});
 });

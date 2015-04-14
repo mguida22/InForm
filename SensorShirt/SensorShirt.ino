@@ -4,7 +4,8 @@
  */
 #include "ArduinoJson.h";
 #include "Variables.h";
- 
+#include <stdbool.h>;
+
 const int backPin = 14;
 const int rShoulderPin = 15;
 const int rUnderarmPin = 16;
@@ -21,7 +22,7 @@ int rUnderarmValue = -1;
 //Could potentially take up too much memory
 DynamicJsonBuffer jsonBuffer;
 DynamicJsonBuffer jsonOutBuffer;
-boolean updated = false;
+bool updated = false;
 
 void setup() {
   Serial.begin(9600);
@@ -42,7 +43,7 @@ void loop() {
   rUnderarmValue = analogRead(rUnderarmPin);
   lShoulderValue = analogRead(lShoulderPin);
   lUnderarmValue = analogRead(lShoulderPin);
-  
+
   String content = "";
   char character;
 
@@ -59,68 +60,82 @@ void loop() {
 
 void parseJSON(String content) {
   updated = false;
-  Serial.println(content);
   JsonObject& in = jsonBuffer.parseObject(const_cast<char*>(content.c_str()));
-  
+
   if (!in.success()) {
-    //Serial.println("parseObject() failed");
+    Serial.println("JSON parsing failed");
     return;
   }
-  //Serial.println("parseObject() succeeded");
+
+  //Define variables to use to build our JSON
+  String type = "out";
+  const char* name = in["name"];
+  bool leftArm = false;
+  bool rightArm = false;
+  bool back = false;
   
-  //Build JSON to return
-  JsonObject& out = jsonBuffer.createObject();
-  out["type"] = "out";
-  out["name"] = in["name"];
   //Evaluate
   if (strcmp(in["leftArm"], "fwd45")==0) {
-    out["leftArm"] = armFwdLeft45();
+    leftArm = armFwdLeft45();
   } else if (strcmp(in["leftArm"], "fwd90")==0) {
-    out["leftArm"] = armFwdLeft90();
+    leftArm = armFwdLeft90();
   } else if (strcmp(in["leftArm"], "fwd135")==0) {
-    out["leftArm"] = armFwdLeft135();
+    leftArm = armFwdLeft135();
   } else if (strcmp(in["leftArm"], "fwd180")==0) {
-    out["leftArm"] = armFwdLeft180();
+    leftArm = armFwdLeft180();
   } else if (strcmp(in["leftArm"], "side45")==0) {
-    out["leftArm"] = armSideLeft45();
+    leftArm = armSideLeft45();
   } else if (strcmp(in["leftArm"], "side90")==0) {
-    out["leftArm"] = armSideLeft90();
+    leftArm = armSideLeft90();
   } else if (strcmp(in["leftArm"], "side135")==0) {
-    out["leftArm"] = armSideLeft135();
+    leftArm = armSideLeft135();
   } else if (strcmp(in["leftArm"], "side180")==0) {
-    out["leftArm"] = armSideLeft180();
+    leftArm = armSideLeft180();
   } else if (strcmp(in["leftArm"], "atSide")==0) {
-    out["leftArm"] = armAtSideLeft();
+    leftArm = armAtSideLeft();
   }
-  
-  if (strcmp(in["leftArm"], "fwd45")==0) {
-    out["rightArm"] = armFwdRight45();
-  } else if (strcmp(in["rightArm"], "fwd90")==0) {
-    out["rightArm"] = armFwdRight90();
-  } else if (strcmp(in["rightArm"], "fwd135")==0) {
-    out["rightArm"] = armFwdRight135();
-  } else if (strcmp(in["rightArm"], "fwd180")==0) {
-    out["rightArm"] = armFwdRight180();
-  } else if (strcmp(in["rightArm"], "side45")==0) {
-    out["rightArm"] = armSideRight45();
-  } else if (strcmp(in["rightArm"], "side90")==0) {
-    out["rightArm"] = armSideRight90();
-  } else if (strcmp(in["rightArm"], "side135")==0) {
-    out["rightArm"] = armSideRight135();
-  } else if (strcmp(in["rightArm"], "side180")==0) {
-    out["rightArm"] = armSideRight180();
-  } else if (strcmp(in["rightArm"], "atSide")==0) {
-    out["rightArm"] = armAtSideRight();
-  }
-  
-  if (strcmp(in["back"], "straight")==0) {
-    out["back"] = backStraight();
-  } else if (strcmp(in["back"], "fwd")==0) {
-    out["back"] = backBentFwd();
-  } else if (strcmp(in["back"], "back")==0) {
-    out["back"] = backBentBack();
-  }
-  
-  out.printTo(Serial);
 
+  if (strcmp(in["rightArm"], "fwd45")==0) {
+    rightArm = armFwdRight45();
+  } else if (strcmp(in["rightArm"], "fwd90")==0) {
+    rightArm = armFwdRight90();
+  } else if (strcmp(in["rightArm"], "fwd135")==0) {
+    rightArm = armFwdRight135();
+  } else if (strcmp(in["rightArm"], "fwd180")==0) {
+    rightArm = armFwdRight180();
+  } else if (strcmp(in["rightArm"], "side45")==0) {
+    rightArm = armSideRight45();
+  } else if (strcmp(in["rightArm"], "side90")==0) {
+    rightArm = armSideRight90();
+  } else if (strcmp(in["rightArm"], "side135")==0) {
+    rightArm = armSideRight135();
+  } else if (strcmp(in["rightArm"], "side180")==0) {
+    rightArm = armSideRight180();
+  } else if (strcmp(in["rightArm"], "atSide")==0) {
+    rightArm = armAtSideRight();
+  }
+
+  if (strcmp(in["back"], "straight")==0) {
+    back = backStraight();
+  } else if (strcmp(in["back"], "fwd")==0) {
+    back = backBentFwd();
+  } else if (strcmp(in["back"], "back")==0) {
+    back = backBentBack();
+  }
+
+  //build JSON string
+  String jsonString = "{\"type\":\"";
+  jsonString += type;
+  jsonString += "\",\"name\":\"";
+  jsonString += name;
+  jsonString += "\",\"leftArm\":\"";
+  jsonString += leftArm;
+  jsonString += "\",\"rightArm\":\"";
+  jsonString += rightArm;
+  jsonString += "\",\"back\":\"";
+  jsonString += back;
+  jsonString += "\"}";
+
+  //Print JSON to Serial
+  Serial.println(jsonString);
 }

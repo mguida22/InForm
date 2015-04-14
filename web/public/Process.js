@@ -5,10 +5,9 @@
 
 // when you get a serialdata event, do this:
 socket.on('serialEvent', function (data) {
-	// set the stuff inside the element's HTML tags to
-	// whatever the 'value' property of the received data is:
-	console.log('incoming' + data);
-	textDisplay.innerHTML = data;
+	// Parse JSON and display name
+	data = JSON.parse(data);
+	textDisplay.innerHTML = data.name;
 });
 
 //Builds JSON object from selected pose
