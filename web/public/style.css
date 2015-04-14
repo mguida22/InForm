@@ -7,8 +7,20 @@ h5 {
 	color: #888;
 }
 
-#pose {
-	color: #5db85b;
+body {
+	border-top: 2px solid #5db85b;
+}
+
+#feedback {
+	text-align: center;
+}
+
+#feedback>h3 {
+	text-align: left;
+}
+
+#selectPose {
+	border-right: 1px solid #ddd;
 }
 
 .form-control::-webkit-input-placeholder {
@@ -33,10 +45,3 @@ h5 {
 	color: #5db85b;
 }
 
-#feedback {
-	border-left: 1px solid #ddd;
-}
-
-body {
-	border-top: 2px solid #5db85b;
-}

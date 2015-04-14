@@ -42,8 +42,6 @@
 		  	<div class="row">
 			    <div class="col-sm-4" id="selectPose">
 			      	<h3>Select a Pose</h3>
-
-
 					<form role="form">
 						<div class="radio">
 					    	<label><input type="radio" name="currentPose" value="plank">Plank</label>
@@ -122,27 +120,28 @@
 						    			</select>
 						    		</div>
 						    		<button type="button" class="btn btn-success">Submit</button>
-						    	</div>						    	
+						    	</div>
 							</form>
 					    </div>
 					</div>
 			    </div>
 			    <div class="col-sm-8" id="feedback">
 			      	<h3>Feedback</h3>
-			      		<div id="content" align="center">
-							And the latest is:
-						<div id="textDisplay">Text will show up here</div>
+					<div class="row">
+						<div class="col-sm-4">
+							<h5>Left Arm</h5>
+							<span class="label label-info" id="leftArmDisp">Waiting for Input</span>
 						</div>
-			      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing el amet, consectetur adipisicing el amet, consectetur adipisicing elit...</p>
-			      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing el amet, consectetur adipisicing el amet, consectetur adipisicing elit...</p>
-			      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing el amet, consectetur adipisicing el amet, consectetur adipisicing elit...</p>
-			      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing el amet, consectetur adipisicing el amet, consectetur adipisicing elit...</p>
-			      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing el amet, consectetur adipisicing el amet, consectetur adipisicing elit...</p>
-			      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing el amet, consectetur adipisicing el amet, consectetur adipisicing elit...</p>
+						<div class="col-sm-4">
+							<h5>Right Arm</h5>
+							<span class="label label-info" id="rightArmDisp">Waiting for Input</span>
+						</div>
+						<div class="col-sm-4">
+							<h5>Back</h5>
+							<span class="label label-info" id="backDisp">Waiting for Input</span>
+						</div>
+					</div>
 			    </div>
-
-
-
 		  </div>
 		</div>
 	</body>
