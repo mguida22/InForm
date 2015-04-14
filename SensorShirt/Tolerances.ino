@@ -1,81 +1,76 @@
-#include <iostream>;
-#include "Variables.h";
-
-using namespace std;
-
 const int EXTRATOL = 10;
 
 int * computeTol() {
-	int i = 600;
-	int val = 0;
+  int i = 600;
+  int val = 0;
 
-	int backLow = 1024;
-	int rShoulderLow = 1024;
-	int lShoulderLow = 1024;
-	int rUnderarmLow = 1024;
-	int lUnderarmLow = 1024;
+  int backLow = 1024;
+  int rShoulderLow = 1024;
+  int lShoulderLow = 1024;
+  int rUnderarmLow = 1024;
+  int lUnderarmLow = 1024;
 
-	int backHigh = 0;
-	int rShoulderHigh = 0;
-	int lShoulderHigh = 0;
-	int rUnderarmHigh = 0;
-	int lUnderarmHigh = 0;
+  int backHigh = 0;
+  int rShoulderHigh = 0;
+  int lShoulderHigh = 0;
+  int rUnderarmHigh = 0;
+  int lUnderarmHigh = 0;
 
-	while (i > 0) {
-		if (i % 20 == 0) {
-			Serial.println(i / 20);
-		}
+  while (i > 0) {
+    if (i % 20 == 0) {
+      Serial.println(i / 20);
+    }
+  
+    val = analogRead(backPin);
+    if (val < backLow) {
+      backLow = val;
+    } else if (val > backHigh) {
+      backHigh = val;
+    }
 
-		val = analogRead(backPin);
-		if (val < backLow) {
-			backLow = val;
-		} else if (val > backHigh) {
-			backHigh = val;
-		}
+    val = analogRead(rShoulderPin);
+    if (val < rShoulderLow) {
+      rShoulderLow = val;
+    } else if (val > rShoulderHigh) {
+      rShoulderHigh = val;
+    }
 
-		val = analogRead(rShoulderPin);
-		if (val < rShoulderLow) {
-			rShoulderLow = val;
-		} else if (val > rShoulderHigh) {
-			rShoulderHigh = val;
-		}
+    val = analogRead(lShoulderPin);
+    if (val < lShoulderLow) {
+      lShoulderLow = val;
+    } else if (val > lShoulderHigh) {
+      lShoulderHigh = val;
+    }
 
-		val = analogRead(lShoulderPin);
-		if (val < lShoulderLow) {
-			lShoulderLow = val;
-		} else if (val > lShoulderHigh) {
-			lShoulderHigh = val
-		}
+    val = analogRead(rUnderarmPin);
+    if (val < rUnderarmLow) {
+      rUnderarmLow = val;
+    } else if (val > rUnderarmHigh) {
+      rUnderarmHigh = val;
+    }
 
-		val = analogRead(rUnderarmPin);
-		if (val < rUnderArmLow) {
-			rUnderArmLow = val;
-		} else if (val > rUnderarmHigh) {
-			rUnderarmHigh = val;
-		}
+    val = analogRead(lUnderarmPin);
+    if (val < lUnderarmLow) {
+      lUnderarmLow = val;
+    } else if (val > lUnderarmHigh) {
+      lUnderarmHigh = val;
+    }
 
-		val = analogRead(lUnderarmPin);
-		if (val < lUnderarmLow) {
-			lUnderarmLow = val;
-		} else if (val > lUnderarmHigh) {
-			lUnderarmHigh = val;
-		}
+    i--;
+    delay(50);
+  }
 
-		i--;
-		delay(50);
-	}
+  backHigh = backHigh - backLow + EXTRATOL;
+  rShoulderHigh = rShoulderHigh - rShoulderLow + EXTRATOL;
+  lShoulderHigh = lShoulderHigh - lShoulderLow + EXTRATOL;
+  rUnderarmHigh = rUnderarmHigh - rUnderarmLow + EXTRATOL;
+  lUnderarmHigh = lUnderarmHigh - lUnderarmLow + EXTRATOL;
 
-	backHigh = backHigh - backLow + EXTRATOL;
-	rShoulderHigh = rShoulderHigh - rShoulderLow + EXTRATOL;
-	lShoulderHigh = lShoulderHigh - lShoulderLow + EXTRATOL;
-	rUnderarmHigh = rUnderarmHigh - rUnderarmLow + EXTRATOL;
-	lUnderarmHigh = lUnderarmHigh - lUnderarmLow + EXTRATOL;
-
-	int ret[6] = { backHigh, rShoulderHigh, rUnderarmHigh, backHigh, lShoulderHigh, lUnderarmHigh };
-	return ret;
+  int ret[6] = { backHigh, rShoulderHigh, rUnderarmHigh, backHigh, lShoulderHigh, lUnderarmHigh };
+  return ret;
 }
 
-void setVariables(){
+void setTolerances() {
 
   //setup
   int *avgs;
