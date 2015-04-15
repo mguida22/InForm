@@ -13,6 +13,9 @@ socket.on('serialEvent', function (data) {
 //Displays status to user
 function displayData(data) {
 	data.rightArm = 1;
+
+	document.getElementById("poseName").innerHTML = data.name;
+
 	if (data.leftArm == 0) {
 		leftArmDisp.innerHTML = 'Incorrect Position';
 		document.getElementById("leftArmDisp").className = "label label-danger";
