@@ -14,7 +14,15 @@ socket.on('serialEvent', function (data) {
 function displayData(data) {
 	data.rightArm = 1;
 
-	document.getElementById("poseName").innerHTML = data.name;
+	if (data.name == 'plank') {
+		document.getElementById("poseName").innerHTML = "Feedback : Plank";
+	} else if (data.name == 'mountainPose') {
+		document.getElementById("poseName").innerHTML = "Feedback : Mountain Pose";
+	} else if (data.name == 'downwardDog') {
+		document.getElementById("poseName").innerHTML = "Feedback : Downward Dog";
+	} else if (data.name == 'warrior') {
+		document.getElementById("poseName").innerHTML = "Feedback : Warrior";
+	}
 
 	if (data.leftArm == 0) {
 		leftArmDisp.innerHTML = 'Incorrect Position';
