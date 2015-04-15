@@ -18,8 +18,6 @@ f = open('Tolerances.h', 'w')
 f.close()
 
 while 1:
-    #sys.stdout.write(ser.readline())
-    #sys.stdout.flush()
 	f = open('Tolerances.h','a')
 	f.write(ser.readline())
 	print('writing')
