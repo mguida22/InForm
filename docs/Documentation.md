@@ -1,5 +1,5 @@
-Kylie Dale and Michael Guida
-University of Colorado
+Kylie Dale and Michael Guida\n
+University of Colorado\n
 2015
 
 # Sensor Shirt
@@ -101,7 +101,17 @@ large for wearable   | small enough to wear   | very small
 <!--TODO: write -->
 
 ##Hardware Implementation
-<!--TODO-MG: write, add parts list, diagrams of circuit -->
+<!--TODO-MG: write, diagrams of circuit -->
+###Parts List
+ - [Teensy 3.1](https://www.pjrc.com/teensy/teensy31.html)
+ - [MedTex130](http://www.amazon.com/gp/product/B004G4ZLRI/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1) (Conductive Fabric)
+ - [Conductive Thread](https://www.sparkfun.com/products/10867)
+ - Standard Thread
+ - UnderArmour t-shirt
+ - Wire
+ - Copper foil
+ - Push button
+ - MicroUSB cable
 
 ##Software Implementation
 <!--TODO-MG: write, add code snippets, api calls-->
