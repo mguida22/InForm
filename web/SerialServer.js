@@ -51,7 +51,8 @@ var myPort = new SerialPort(portName, {
 // listen for new socket.io connections:
 io.sockets.on('connection', function (socket) {
 	// notify when connected
-	console.log('connected');
+	console.log('socket.io connected');
+	console.log('serial port connected');
 	connected = true;
 	
 	// if there's a socket client, listen for new serial data:
@@ -62,8 +63,11 @@ io.sockets.on('connection', function (socket) {
 
 	// notify when disconnected
 	socket.on('disconnect', function() {
-		console.log('disconnected');
+		console.log('socket.io disconnected');
 		connected = false;
+		myPort.close(function (err) {
+		    console.log('serial port disconnected');
+		});
 	});
 
 	// if the client sends you data, act on it:
