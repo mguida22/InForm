@@ -2,7 +2,6 @@
  * SetTolerances
  * Kylie Dale and Michael Guida
  */
- 
 const int EXTRATOL = 10;
 
 int * computeTol() {
@@ -275,7 +274,7 @@ void setTolerances() {
   while(digitalRead(buttonPin) != 1){}
   
   avgs = computeTol();
-  
+
   backBentBBackTol = avgs[0];
   
   delay(250);

@@ -4,7 +4,6 @@
  */
  
 #include "Variables.h";
-#include <stdbool.h>;
 
 const int backPin = 14;
 const int rShoulderPin = 15;

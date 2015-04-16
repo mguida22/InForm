@@ -4,7 +4,7 @@
  */
 #include "ArduinoJson.h";
 #include "Variables.h";
-#include <stdbool.h>;
+#include "Tolerances.h";
 
 const int backPin = 14;
 const int rShoulderPin = 15;
@@ -21,20 +21,11 @@ int rUnderarmValue = -1;
 
 //Could potentially take up too much memory
 DynamicJsonBuffer jsonBuffer;
-DynamicJsonBuffer jsonOutBuffer;
 bool updated = false;
 
 void setup() {
   Serial.begin(9600);
   pinMode(buttonPin, INPUT);
-}
-
-void testing() {
-  int i = 0;
-  for (i=0; i<1000; i++){
-    Serial.println(i);
-    delay(300);
-  }
 }
 
 void loop() {

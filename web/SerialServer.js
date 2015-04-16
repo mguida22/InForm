@@ -42,18 +42,18 @@ server.listen(8080, function(){
 	console.log("Express server listening on port " + 8080);
 });
 
-// open the serial port using the name entered on the command line:
-var myPort = new SerialPort(portName, {
-	// look for return and newline at the end of each data packet:
-	parser: serialport.parsers.readline("\r\n")
-});
-
 // listen for new socket.io connections:
 io.sockets.on('connection', function (socket) {
 	// notify when connected
 	console.log('socket.io connected');
-	console.log('serial port connected');
 	connected = true;
+
+	// open the serial port using the name entered on the command line:
+	var myPort = new SerialPort(portName, {
+		// look for return and newline at the end of each data packet:
+		parser: serialport.parsers.readline("\r\n")
+	});
+	console.log('serial port connected');
 	
 	// if there's a socket client, listen for new serial data:
 	myPort.on('data', function (data) {
