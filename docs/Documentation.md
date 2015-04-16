@@ -1,11 +1,11 @@
-Kylie Dale and Michael Guida\n
-University of Colorado\n
+Kylie Dale and Michael Guida
+University of Colorado
 2015
 
 # Sensor Shirt
 A shirt that helps you learn yoga by giving live feedback on your body position compared to the correct form. Developed for Mark Gross's 'Technology for Sport and Play' class at the University of Colorado Boulder, by Kylie Dale and Michael Guida.
 
-##Table of Contents
+## Table of Contents
 <!--TODO-MG: link to headings-->
 
 - Inspiration
@@ -19,12 +19,17 @@ A shirt that helps you learn yoga by giving live feedback on your body position 
 	- Microcontrollers
 	- Competitors
 - Hardware Implementation
+	- Parts List
+	- Circuit Schematics
+	- Building the Circuit
+	- Shirt Schematics
 - Software Implementation
+- Credits
 
-##Inspiration
+## Inspiration
 We enrolled in CSCI 4830 Technology for Sport and Play at the Univeristy of Colorado at Boulder. The end goal for the class was to create a project to demo at the end of the semester expo. From the beginning we both knew that we wanted to include some type of hardware or wearables in the project. While in the process of brainstorming ideas, we realized we had the opportunity to fill the need for a personal trainer or instructor when learning new activities, and we have filled that role by creating this product. We figure with the introduction of our idea into a variety of activities, we can help people learn the correct form without needing someone else there to give feedback on their positioning. In this way, users can avoid the cost of a personal trainer, while still improving.
 
-##Applications
+## Applications
 <!--TODO-KD: write -->
 There are many potential uses for the Sensor Shirt
 
@@ -39,9 +44,9 @@ There are many potential uses for the Sensor Shirt
 4. Games
 	- Simon says 
 
-##Goals
+## Goals
 
-###MVP
+### MVP
 Our plan for a minimum viable product is listed below. The idea for the MVP is to define what pieces of the project are necessary to convince initial users of where the project can go.
 
 - Gather data from body using conductive fabric in key areas on the shirt
@@ -52,7 +57,7 @@ Our plan for a minimum viable product is listed below. The idea for the MVP is t
 	- Shows correctly and incorrectly positioned parts of upper body
 
 
-###Full Plans
+### Full Plans
 These are our full plans, describing where the project will go in the future. Some new features are included and there is a focus on user experience.
 
 - Gather data from body
@@ -75,15 +80,15 @@ These are our full plans, describing where the project will go in the future. So
 	- Shirt vibrates in incorrectly positioned areas
 
 
-##Research
+## Research
 
-###General
+### General
 <!--TODO: write -->
 
-###Sensors
+### Sensors
 <!--TODO: write -->
 
-###Microcontrollers
+### Microcontrollers
 The selection of a microcontroller was very important to us. We had strict critera due to the nature of our project. The microcontroller would have to be attached to the shirt in some way and remain on the user for the duration of its use so it had to be small and not noticeable. Aside from size, power requirements, price and analog inputs were large deciding factors.
 
 We compiled this table of information below (accurate as of 2/2015) on the top three microcontrollers we considered. We eventually decided on the Teensy 3.1 due to its low price, small size and incredible number of analog inputs.
@@ -102,25 +107,64 @@ USB Native           | FTDI-Compatible Header | USB Native
 16 KB flash          | 16 KB flash            | 256 KB flash
 large for wearable   | small enough to wear   | very small
 
-###Competitors
+### Competitors
 <!--TODO: write -->
 
-##Hardware Implementation
+## Hardware Implementation
 <!--TODO-MG: write, diagrams of circuit -->
-###Parts List
+### Parts List
  - [Teensy 3.1](https://www.pjrc.com/teensy/teensy31.html)
  - [MedTex130](http://www.amazon.com/gp/product/B004G4ZLRI/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1) (Conductive Fabric)
  - [Conductive Thread](https://www.sparkfun.com/products/10867)
  - Standard Thread
  - UnderArmour t-shirt
  - Wire
+ - 100 Ω resistors
+ - 10 kΩ resistors
  - Copper foil
  - Push button
  - MicroUSB cable
 
-##Software Implementation
+### Circuit Diagrams
+<!--![Breadboard Diagram](link.to.gihub/goes.here "Frizting Breadboard Diagram Diagram")-->
+<!--![Circuit Schematic](link.to.gihub/goes.here "Frizting Circuit Schematic")-->
+<!--![Top View of Circuit](link.to.gihub/goes.here "Top View of Circuit")-->
+<!--![Bottom View of Circuit](link.to.gihub/goes.here "Bottom View of Circuit")-->
+
+### Circuit Design
+To build the circuit we first laid it all out on a breadboard. The black square sensors represent a connection with the conductive fabric on our shirt, which will be described in more detail later. The 100 Ω resistors are needed for the connnection between our board and the ground. Originally we had used very weak resistors (~10 Ω) thinking that less resistance would be more beneficial because the values would have more variation. This proved to be a problem when we were testing the circuit because there was too much power for the resistors to handle and they were rapidly heating up. They are rated at ¼ watts and we were putting over 1 watt of power through them (power is given by the equation P = ε^2/R). To solve this we swapped out our resistors for 100 ohm resistors so we only run about 1/10 of a watt through them at the max power.
+
+After testing everything and finalizing our circuit, we constructed a Fritzing diagram of our breadboard. [Fritzing](http://fritzing.org/home/) is an open source prototyping software that allows for easy construction of circuits. We used Fritzing to produce the diagrams above and help us in the process of consolidating our circuit to fit in a smaller container.
+
+With the help of the diagram we laid out the components of the circuit on a small piece of cardboard. This enabled us to arrange our circuit in different ways and draw the connections in. Eventually using both sides of the cardboard we built a fairly small circuit and soldered all of the pieces together. 
+
+### Connecting to the Shirt
+
+The connection to the shirt is a custom built cable bus that extends off of our circuit board. The cable bus coming off of the circuit consists of 6 or 10 wires (depending on the version) arranged in a rectangle. These wires are then secured in place with electrical tape. A similar cable bus is also attached to the shirt, with female adapters. This system allows for us to attach the circuit to the shirt in a secure way, while allowing the user to remove the circuit when they need to wash the shirt.
+
+Once connected to the shirt, the circuit is housed in a small case made of foam core. The case serves as a way to attach the circuit to your waist, protect the circuit during exercise and provide a more asthetically pleasing product.
+
+### Shirt Diagrams
+<!--![Diagram of Shirt](link.to.gihub/goes.here "Diagram of shirt")-->
+<!--![Back View of Shirt](link.to.gihub/goes.here "Back View of Shirt")-->
+<!--![Side View of Shirt](link.to.gihub/goes.here "Side View of Shirt")-->
+
+### Shirt Design
+The shirt itself is the key to the success of this project. When setting out to design the shirt we had two goals in mind, accurately track body position and make the shirt feel as close to normal as possible. When a user is wearing the shirt we want them to feel as if it is a normal piece of clothing.
+
+The base of our shirt is a skin-tight compression shirt. This provides a comfortable experience that allows us to position our sensors (conductive fabric) tightly against the body. The more each strip of conductive fabric is stretched or relaxed with the movements of the users body, the better the readings. 
+
+<!-- Original plans to use grid of fabric, flex sensors, accelerometers -->
+<!-- Positioning fabric in key areas -->
+<!-- Sewing with conductive thread, connection area-->
+<!-- Conclude with goals of comfort and no electronics discussion -->
+
+## Software Implementation
 <!--TODO-MG: write, add code snippets, api calls-->
 <!-- 
 	discuss serialport - server - client site connection
 	make diagram of the interactions from user input to displayed feedback
 -->
+
+## Credits
+<!-- Should we include this? -->
