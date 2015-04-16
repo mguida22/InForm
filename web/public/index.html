@@ -34,7 +34,7 @@
       <div class="row">
         <div class="col-sm-4" id="selectPose">
           <h3>Select a Pose</h3>
-          <form role="form">
+          <form role="form" id="selectPoseList">
             <div class="radio">
               <label><input type="radio" name="currentPose" value="plank">Plank</label>
             </div>
@@ -54,8 +54,8 @@
               <h3>Build Your Own Pose</h3>
               <form role="form">
                 <div class="form-group">
-                  <label for="pose">Pose Name:</label>
-                  <input type="text" class="form-control" id="pose" placeholder="Name your pose...">
+                  <label for="poseName">Pose Name:</label>
+                  <input type="text" class="form-control" id="poseName" placeholder="Name your pose...">
                 </div>
                 <!--Left Arm-->
                 <div class="form-inline">
@@ -63,18 +63,18 @@
                   <div class="form-group">
                     <label for="leftArmDirection">Direction:</label>
                     <select class="form-control" id="leftArmDirection">
-                      <option>Forward</option>
-                      <option>Side</option>
+                      <option value="fwd">Forward</option>
+                      <option value="side">Side</option>
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="leftArmAngle">Angle:</label>
-                    <select class="form-control" id="leftArmDirection">
-                      <option>0</option>
-                      <option>45</option>
-                      <option>90</option>
-                      <option>135</option>
-                      <option>180</option>
+                    <select class="form-control" id="leftArmAngle">
+                      <option value="0">0</option>
+                      <option value="45">45</option>
+                      <option value="90">90</option>
+                      <option value="135">135</option>
+                      <option value="180">180</option>
                     </select>
                   </div>
                 </div>
@@ -84,18 +84,18 @@
                   <div class="form-group">
                     <label for="rightArmDirection">Direction:</label>
                     <select class="form-control" id="rightArmDirection">
-                      <option>Forward</option>
-                      <option>Side</option>
+                      <option value="fwd">Forward</option>
+                      <option value="side">Side</option>
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="rightArmAngle">Angle:</label>
-                    <select class="form-control" id="rightArmDirection">
-                      <option>0</option>
-                      <option>45</option>
-                      <option>90</option>
-                      <option>135</option>
-                      <option>180</option>
+                    <select class="form-control" id="rightArmAngle">
+                      <option value="0">0</option>
+                      <option value="45">45</option>
+                      <option value="90">90</option>
+                      <option value="135">135</option>
+                      <option value="180">180</option>
                     </select>
                   </div>
                 </div>
@@ -104,19 +104,19 @@
                   <h5>Back</h5>
                   <div class="form-group">
                     <select class="form-control" id="backFunction">
-                      <option>Back straight</option>
-                      <option>Back bent forward</option>
-                      <option>Back bent backward</option>
+                      <option value="straight">Back straight</option>
+                      <option value="fwd">Back bent forward</option>
+                      <option value="back">Back bent backward</option>
                     </select>
                   </div>
-                  <button type="button" class="btn btn-success">Submit</button>
+                  <button type="button" class="btn btn-success" onclick="buildPose()">Submit</button>
                 </div>
               </form>
             </div>
           </div>
         </div>
         <div class="col-sm-8" id="feedback">
-          <h3 id="poseName">Feedback : Pose</h3>
+          <h3 id="feedbackTitle">Feedback : Pose</h3>
           <div class="row">
             <div class="col-sm-4">
               <h5>Left Arm</h5>
