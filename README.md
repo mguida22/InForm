@@ -1,16 +1,22 @@
 # Sensor Shirt
+
 A shirt that helps you learn yoga by giving live feedback on your body position compared to the correct form.
 
-Read the documentation.md file that can be found in the docs folder for more complete information regarding this project.
+Read the [documentation.md](https://github.com/mguida22/sensor-shirt/blob/master/docs/Documentation.md) file that can be found in the docs folder for more complete information regarding this project.
 
 ## Setup
 
-The Teensy 3.1 was used as the microcontroller for the sensor shirt. To run this just like an Arduino board, you will need to download the Teensyduino software on your computer, which can be downloaded from [prjc](https://www.pjrc.com/teensy/td_download.html). 
+### Microcontroller
 
-From there you can start Arduino and select the correct board you are using. For the first time run, you will have to "Verify" the code and then press the button on the Teensy when prompted to program the code. 
+>While you can use any Arduino compatible board, this project was only tested on the Teensy 3.1 and all documentation assumes the use of that board when relevant.
 
+To run the Teensy 3.1 just like an Arduino board, you will need to download the Teensyduino software onto your computer, which can be downloaded from [prjc](https://www.pjrc.com/teensy/td_download.html). 
+
+From there you can start Arduino and select the correct board you are using. For the first run, you will have to "Verify" the code and then press the reset button on the Teensy when prompted to before programming the board.
+
+### Node Packages
 <!-- TODO: create package.json file for all required node libraries -->
-There are also some libraries and packages required to run the sensor shirt. First you will need to have Node.js installed on your computer, which you can download from the official [node site](http://nodejs.org).
+There are a few node packages required to run server for the sensor shirt. If you do not have it already, you will need to download the latest version of Node.js, which can be found on the official [node site](http://nodejs.org).
 
 After installing node, or if you already have it, in your command line run each of the following commands to install all required packages.
 
@@ -20,9 +26,32 @@ $ npm socket.io
 $ npm serialport
 ```
 
-You will also need to install an Arduino library called [ArduinoJson](https://github.com/bblanchon/ArduinoJson). Follow the instructions on the ArduinoJson repository wiki to [use the library with Arduino](https://github.com/bblanchon/ArduinoJson/wiki/Using%20the%20library%20with%20Arduino) to get it set up.
+### Python Module
 
-## Running the Server and Web Page
+This project requires you have the latest version of python 2 which can be downloaded from the [python site](https://www.python.org). To use the program to set the tolerances you will need to have pySerial installed. This can be installed through the command line using either
+
+```
+pip install pyserial
+```
+
+or
+
+```
+easy_install -U pyserial
+```
+
+### Arduino Library
+
+You will also need to install an Arduino library called [ArduinoJson](https://github.com/bblanchon/ArduinoJson). Download the zip file from the ArduinoJson repository [wiki](https://github.com/bblanchon/ArduinoJson/wiki/Using%20the%20library%20with%20Arduino) and extract it to the following location.
+
+```
+<your Arduino folder>/libraries/ArduinoJson
+```
+
+For more detailed information regarding the installation of this library refer to the project's wiki.
+
+
+## Running the Program, Server and Web Page
 
 To run the server and web page first check you have all of the modules installed. The order of the next few steps is very important so make sure to follow them exactly.
 
@@ -38,17 +67,33 @@ The server will now be running on `http://localhost:8080`. Open up a browser and
 
 To stop the server, simply type control-c in your terminal.
 
+## Updating the Tolerances
+
+Before attempting to run the Tolerances program, be sure you have all of the required modules installed.
+
+Once you have done that, upload the Tolerances sketch to your Teensy. After the sketch has finished uploading run the SaveTolerances.py file, which can be ran through the command line as follows. Replace the third arguement with your the port of your arduino and the fourth with your baud rate (most likely 9600).
+
+```
+$ python SaveTolerances.py /dev/tty.usbmodem728331 9600
+```
+
+This will regenerate the Tolerances.h file that the SensorShirt program uses to compute positions.
+
 ## Using Position Functions
+<!-- Update Position Functions documentation to reflect changes -->
 
 The position functions can be used to build up complete positions.
 
 For example to assert if the users right arm is raised at 90 degrees forward: 
+
 ```C
 armFwdRight90();
 ```
+
 This will return a boolean value of true or false based off of the users position.
 
 We can use these simple position functions to build a more complex position such as the plank:
+
 ```C
 boolean plank() {
   if (armFwdRight90() && armFwdLeft90() && backStraight()) {
