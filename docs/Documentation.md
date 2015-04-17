@@ -24,7 +24,7 @@ A shirt that helps you learn yoga by giving live feedback on your body position 
 	- Building the Circuit
 	- Shirt Schematics
 - Software Implementation
-- Credits
+- Credits 
 
 ## Inspiration
 We enrolled in CSCI 4830 Technology for Sport and Play at the Univeristy of Colorado at Boulder. The end goal for the class was to create a project to demo at the end of the semester expo. From the beginning we both knew that we wanted to include some type of hardware or wearables in the project. While in the process of brainstorming ideas, we realized we had the opportunity to fill the need for a personal trainer or instructor when learning new activities, and we have filled that role by creating this product. We figure with the introduction of our idea into a variety of activities, we can help people learn the correct form without needing someone else there to give feedback on their positioning. In this way, users can avoid the cost of a personal trainer, while still improving.
@@ -35,13 +35,17 @@ There are many potential uses for the Sensor Shirt
 1. Yoga poses
 	- Beginners to yoga could use this to help them learn certain poses that are commonly done incorrctly. 
 2. Weight lifiting
-	- This could help weight lifters avoid potential injury if not lifting correctly.
+	- This could help weight lifters avoid potential injury when not lifting correctly by giving feedback during training.
 3. Controller
+	- Users could use this to control technologies based off body movements (particularly in the field of dance):
+		- Lights
+		- Projection
+		- Music
 	- Users could control videogames based on arm and body movements.
 	- Signaling
 		- Users could signal on bikes or other vehicles to ensure safety. 
 4. Games
-	- This product could be used as a Simon Says type of game since it can map body movements. 
+	- This product could be used for games such as Simon Says since it can map and record body movements to then be repeated. 
 
 ## Goals
 
