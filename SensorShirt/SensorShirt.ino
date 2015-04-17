@@ -26,6 +26,10 @@ bool updated = false;
 void setup() {
   Serial.begin(9600);
   pinMode(buttonPin, INPUT);
+  
+  while (!Serial){}
+  delay(50);
+  setVariables();
 }
 
 void loop() {

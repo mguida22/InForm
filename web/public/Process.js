@@ -16,7 +16,7 @@ socket.on('serialEvent', function (data) {
 //Displays status to user
 function displayData(data) {
 	//force correct response from shirt
-	data.rightArm = 1;
+	//data.rightArm = 1;
 
 	if (data.name == 'plank') {
 		document.getElementById("feedbackTitle").innerHTML = "Feedback : Plank";

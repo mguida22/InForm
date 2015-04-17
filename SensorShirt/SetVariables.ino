@@ -38,6 +38,7 @@ void setVariables(){
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   avgs = computeAvg();
   
@@ -56,6 +57,7 @@ void setVariables(){
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   avgs = computeAvg();
   
@@ -74,6 +76,7 @@ void setVariables(){
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   avgs = computeAvg();
   
@@ -92,6 +95,7 @@ void setVariables(){
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   avgs = computeAvg();
   
@@ -110,6 +114,7 @@ void setVariables(){
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   avgs = computeAvg();
   
@@ -126,6 +131,7 @@ void setVariables(){
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   avgs = computeAvg();
   
@@ -144,6 +150,7 @@ void setVariables(){
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   avgs = computeAvg();
   
@@ -162,6 +169,7 @@ void setVariables(){
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   avgs = computeAvg();
   
@@ -180,6 +188,7 @@ void setVariables(){
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   avgs = computeAvg();
   
@@ -198,6 +207,7 @@ void setVariables(){
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   avgs = computeAvg();
   
@@ -210,6 +220,7 @@ void setVariables(){
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   avgs = computeAvg();
   
@@ -222,6 +233,7 @@ void setVariables(){
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   avgs = computeAvg();
   
