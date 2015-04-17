@@ -3,7 +3,7 @@
  * Kylie Dale and Michael Guida
  */
 
-int * computeAvg(){
+void computeAvg(int *avgs){
   int i = 100;
   int backSum = 0;
   int rShoulderSum = 0;
@@ -24,14 +24,18 @@ int * computeAvg(){
     delay(50);
   }
   
-  int ret[6] = {backSum/100, rShoulderSum/100, rUnderarmSum/100, backSum/100, lShoulderSum/100, lUnderarmSum/100};
-  return ret;
+  avgs[0] = backSum/100;
+  avgs[1] = rShoulderSum/100;
+  avgs[2] = rUnderarmSum/100;
+  avgs[3] = backSum/100;
+  avgs[4] = lShoulderSum/100;
+  avgs[5] = lUnderarmSum/100;
 }
 
 void setVariables(){
   
   //setup
-  int *avgs;
+  int avgs[6];
   
   // -------- Arms at side --------
   Serial.println("Put your arms at your side \nPress button when ready");
@@ -40,7 +44,7 @@ void setVariables(){
   while(digitalRead(buttonPin) != 1){}
   delay(1000);
   
-  avgs = computeAvg();
+  computeAvg(&avgs[0]);
   
   armSRBackVal = avgs[0];
   armSRShoulderVal = avgs[1];
@@ -59,7 +63,7 @@ void setVariables(){
   while(digitalRead(buttonPin) != 1){}
   delay(1000);
   
-  avgs = computeAvg();
+  computeAvg(&avgs[0]);
   
   armSR45BackVal = avgs[0];
   armSR45ShoulderVal = avgs[1];
@@ -78,7 +82,7 @@ void setVariables(){
   while(digitalRead(buttonPin) != 1){}
   delay(1000);
   
-  avgs = computeAvg();
+  computeAvg(&avgs[0]);
   
   armSR90BackVal = avgs[0];
   armSR90ShoulderVal = avgs[1];
@@ -97,7 +101,7 @@ void setVariables(){
   while(digitalRead(buttonPin) != 1){}
   delay(1000);
   
-  avgs = computeAvg();
+  computeAvg(&avgs[0]);
   
   armSR135BackVal = avgs[0];
   armSR135ShoulderVal = avgs[1];
@@ -116,7 +120,7 @@ void setVariables(){
   while(digitalRead(buttonPin) != 1){}
   delay(1000);
   
-  avgs = computeAvg();
+  computeAvg(&avgs[0]);
   
   armSR180BackVal = avgs[0];
   armSR180ShoulderVal = avgs[1];
@@ -133,7 +137,7 @@ void setVariables(){
   while(digitalRead(buttonPin) != 1){}
   delay(1000);
   
-  avgs = computeAvg();
+  computeAvg(&avgs[0]);
   
   armFR45BackVal = avgs[0];
   armFR45ShoulderVal = avgs[1];
@@ -152,7 +156,7 @@ void setVariables(){
   while(digitalRead(buttonPin) != 1){}
   delay(1000);
   
-  avgs = computeAvg();
+  computeAvg(&avgs[0]);
   
   armFR90BackVal = avgs[0];
   armFR90ShoulderVal = avgs[1];
@@ -171,7 +175,7 @@ void setVariables(){
   while(digitalRead(buttonPin) != 1){}
   delay(1000);
   
-  avgs = computeAvg();
+  computeAvg(&avgs[0]);
   
   armFR135BackVal = avgs[0];
   armFR135ShoulderVal = avgs[1];
@@ -190,7 +194,7 @@ void setVariables(){
   while(digitalRead(buttonPin) != 1){}
   delay(1000);
   
-  avgs = computeAvg();
+  computeAvg(&avgs[0]);
   
   armFR180BackVal = avgs[0];
   armFR180ShoulderVal = avgs[1];
@@ -209,7 +213,7 @@ void setVariables(){
   while(digitalRead(buttonPin) != 1){}
   delay(1000);
   
-  avgs = computeAvg();
+  computeAvg(&avgs[0]);
   
   backStraightBackVal = avgs[0];
 
@@ -222,7 +226,7 @@ void setVariables(){
   while(digitalRead(buttonPin) != 1){}
   delay(1000);
   
-  avgs = computeAvg();
+  computeAvg(&avgs[0]);
   
   backBentFBackVal = avgs[0];
   
@@ -235,7 +239,7 @@ void setVariables(){
   while(digitalRead(buttonPin) != 1){}
   delay(1000);
   
-  avgs = computeAvg();
+  computeAvg(&avgs[0]);
   
   backBentBBackVal = avgs[0];
   

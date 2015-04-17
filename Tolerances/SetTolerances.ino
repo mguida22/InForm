@@ -70,6 +70,31 @@ void computeTol(int *tols) {
   tols[3] = backHigh - backLow + EXTRATOL;
   tols[4] = rUnderarmHigh - rUnderarmLow + EXTRATOL;
   tols[5] = lUnderarmHigh - lUnderarmLow + EXTRATOL;
+  
+  Serial.print("back: ");
+  Serial.print(backHigh);
+  Serial.print(", ");
+  Serial.println(backLow);
+  
+  Serial.print("rShoulder: ");
+  Serial.print(rShoulderHigh);
+  Serial.print(", ");
+  Serial.println(rShoulderLow);
+  
+  Serial.print("lShoulder: ");
+  Serial.print(lShoulderHigh);
+  Serial.print(", ");
+  Serial.println(lShoulderLow);
+  
+  Serial.print("rUnderarm: ");
+  Serial.print(rUnderarmHigh);
+  Serial.print(", ");
+  Serial.println(rUnderarmLow);
+  
+  Serial.print("lUnderarm: ");
+  Serial.print(lUnderarmHigh);
+  Serial.print(", ");
+  Serial.println(lUnderarmLow);
 }
 
 void setTolerances() {

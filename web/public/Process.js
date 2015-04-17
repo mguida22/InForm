@@ -10,6 +10,8 @@ var pose;
 socket.on('serialEvent', function (data) {
 	// Parse JSON and display name
 	data = JSON.parse(data);
+	console.log('incoming');
+	console.log(data);
 	displayData(data);
 });
 

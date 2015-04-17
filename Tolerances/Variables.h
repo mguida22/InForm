@@ -115,4 +115,4 @@ int backStraightBackTol = -1;
 int backBentFBackTol = -1;
 
 // -------- backBentBack --------
-int backBentBBackTol = -1
+int backBentBBackTol = -1;

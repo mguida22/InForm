@@ -2,14 +2,13 @@
  * Tolerances
  * Kylie Dale and Michael Guida
  */
- 
 #include "Variables.h";
 
-const int backPin = 14;
+const int backPin = 16;
 const int rShoulderPin = 15;
-const int rUnderarmPin = 16;
-const int lShoulderPin = 17;
-const int lUnderarmPin = 18;
+const int rUnderarmPin = 14;
+const int lShoulderPin = 18;
+const int lUnderarmPin = 17;
 const int buttonPin = 0;
 
 int backValue = -1;
