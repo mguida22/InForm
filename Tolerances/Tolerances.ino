@@ -24,10 +24,14 @@ void setup() {
   Serial.begin(9600);
   pinMode(buttonPin, INPUT);
   
-  //setTolerances();
+  while (!Serial){}
+  delay(50);
+  setTolerances();
   
   //replace with wait for button press
-  delay(2000);
+  Serial.println("Please run the python script and close the serial monitor");
+  Serial.println("Press the button when ready (after closing the monitor)");
+  while(digitalRead(buttonPin) != 1){}
   sendTolerances();
 }
 

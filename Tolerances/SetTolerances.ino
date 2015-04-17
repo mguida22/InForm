@@ -4,8 +4,8 @@
  */
 const int EXTRATOL = 10;
 
-int * computeTol() {
-  int i = 600;
+void computeTol(int *tols) {
+  int i = 100;
   int val = 0;
 
   int backLow = 1024;
@@ -64,24 +64,23 @@ int * computeTol() {
     delay(50);
   }
 
-  backHigh = backHigh - backLow + EXTRATOL;
-  rShoulderHigh = rShoulderHigh - rShoulderLow + EXTRATOL;
-  lShoulderHigh = lShoulderHigh - lShoulderLow + EXTRATOL;
-  rUnderarmHigh = rUnderarmHigh - rUnderarmLow + EXTRATOL;
-  lUnderarmHigh = lUnderarmHigh - lUnderarmLow + EXTRATOL;
-
-  int ret[6] = { backHigh, rShoulderHigh, rUnderarmHigh, backHigh, lShoulderHigh, lUnderarmHigh };
-  return ret;
+  tols[0] = backHigh - backLow + EXTRATOL;
+  tols[1] = rShoulderHigh - rShoulderLow + EXTRATOL;
+  tols[2] = lShoulderHigh - lShoulderLow + EXTRATOL;
+  tols[3] = backHigh - backLow + EXTRATOL;
+  tols[4] = rUnderarmHigh - rUnderarmLow + EXTRATOL;
+  tols[5] = lUnderarmHigh - lUnderarmLow + EXTRATOL;
 }
 
 void setTolerances() {
 
   //setup
-  int *avgs;
+  int tols[6];
 
   Serial.println("Tolerances.cpp");
   Serial.println("Press button when ready");
   while(digitalRead(buttonPin) != 1){}
+  delay(250);
   
   // -------- Arms at side --------
   Serial.println("Put your arms at your side \nPress button when ready");
@@ -89,15 +88,15 @@ void setTolerances() {
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  avgs = computeTol();
+  computeTol(&tols[0]);
   
-  armSRBackTol = avgs[0];
-  armSRShoulderTol = avgs[1];
-  armSRUnderTol = avgs[2];
+  armSRBackTol = tols[0];
+  armSRShoulderTol = tols[1];
+  armSRUnderTol = tols[2];
 
-  armSLBackTol = avgs[0];
-  armSLShoulderTol = avgs[4];
-  armSLUnderTol = avgs[5];
+  armSLBackTol = tols[0];
+  armSLShoulderTol = tols[4];
+  armSLUnderTol = tols[5];
   
   delay(250);
   
@@ -107,15 +106,15 @@ void setTolerances() {
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  avgs = computeTol();
+  computeTol(&tols[0]);
   
-  armSR45BackTol = avgs[0];
-  armSR45ShoulderTol = avgs[1];
-  armSR45UnderTol = avgs[2];
+  armSR45BackTol = tols[0];
+  armSR45ShoulderTol = tols[1];
+  armSR45UnderTol = tols[2];
 
-  armSL45BackTol = avgs[3];
-  armSL45ShoulderTol = avgs[4];
-  armSL45UnderTol = avgs[5];
+  armSL45BackTol = tols[3];
+  armSL45ShoulderTol = tols[4];
+  armSL45UnderTol = tols[5];
 
   delay(250);
   
@@ -125,15 +124,15 @@ void setTolerances() {
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  avgs = computeTol();
+  computeTol(&tols[0]);
   
-  armSR90BackTol = avgs[0];
-  armSR90ShoulderTol = avgs[1];
-  armSR90UnderTol = avgs[2];
+  armSR90BackTol = tols[0];
+  armSR90ShoulderTol = tols[1];
+  armSR90UnderTol = tols[2];
   
-  armSL90BackTol = avgs[3];
-  armSL90ShoulderTol = avgs[4];
-  armSL90UnderTol = avgs[5];
+  armSL90BackTol = tols[3];
+  armSL90ShoulderTol = tols[4];
+  armSL90UnderTol = tols[5];
 
   delay(250);
   
@@ -143,15 +142,15 @@ void setTolerances() {
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  avgs = computeTol();
+  computeTol(&tols[0]);
   
-  armSR135BackTol = avgs[0];
-  armSR135ShoulderTol = avgs[1];
-  armSR135UnderTol = avgs[2];
+  armSR135BackTol = tols[0];
+  armSR135ShoulderTol = tols[1];
+  armSR135UnderTol = tols[2];
   
-  armSL135BackTol = avgs[3];
-  armSL135ShoulderTol = avgs[4];
-  armSL135UnderTol = avgs[5];
+  armSL135BackTol = tols[3];
+  armSL135ShoulderTol = tols[4];
+  armSL135UnderTol = tols[5];
 
   delay(250);
   
@@ -161,15 +160,15 @@ void setTolerances() {
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  avgs = computeTol();
+  computeTol(&tols[0]);
   
-  armSR180BackTol = avgs[0];
-  armSR180ShoulderTol = avgs[1];
-  armSR180UnderTol = avgs[2];
+  armSR180BackTol = tols[0];
+  armSR180ShoulderTol = tols[1];
+  armSR180UnderTol = tols[2];
   
-  armSL180BackTol = avgs[3];
-  armSL180ShoulderTol = avgs[4];
-  armSL180UnderTol = avgs[5];
+  armSL180BackTol = tols[3];
+  armSL180ShoulderTol = tols[4];
+  armSL180UnderTol = tols[5];
 
   // -------- Arms fwd 45 degrees --------
   Serial.println("Put your arms 45 degrees forward \nPress button when ready");
@@ -177,15 +176,15 @@ void setTolerances() {
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  avgs = computeTol();
+  computeTol(&tols[0]);
   
-  armFR45BackTol = avgs[0];
-  armFR45ShoulderTol = avgs[1];
-  armFR45UnderTol = avgs[2];
+  armFR45BackTol = tols[0];
+  armFR45ShoulderTol = tols[1];
+  armFR45UnderTol = tols[2];
   
-  armFL45BackTol = avgs[3];
-  armFL45ShoulderTol = avgs[4];
-  armFL45UnderTol = avgs[5];
+  armFL45BackTol = tols[3];
+  armFL45ShoulderTol = tols[4];
+  armFL45UnderTol = tols[5];
   
   delay(250);
   
@@ -195,15 +194,15 @@ void setTolerances() {
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  avgs = computeTol();
+  computeTol(&tols[0]);
   
-  armFR90BackTol = avgs[0];
-  armFR90ShoulderTol = avgs[1];
-  armFR90UnderTol = avgs[2];
+  armFR90BackTol = tols[0];
+  armFR90ShoulderTol = tols[1];
+  armFR90UnderTol = tols[2];
   
-  armFL90BackTol = avgs[3];
-  armFL90ShoulderTol = avgs[4];
-  armFL90UnderTol = avgs[5];
+  armFL90BackTol = tols[3];
+  armFL90ShoulderTol = tols[4];
+  armFL90UnderTol = tols[5];
 
   delay(250);
   
@@ -213,15 +212,15 @@ void setTolerances() {
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  avgs = computeTol();
+  computeTol(&tols[0]);
   
-  armFR135BackTol = avgs[0];
-  armFR135ShoulderTol = avgs[1];
-  armFR135UnderTol = avgs[2];
+  armFR135BackTol = tols[0];
+  armFR135ShoulderTol = tols[1];
+  armFR135UnderTol = tols[2];
   
-  armFL135BackTol = avgs[3];
-  armFL135ShoulderTol = avgs[4];
-  armFL135UnderTol = avgs[5];
+  armFL135BackTol = tols[3];
+  armFL135ShoulderTol = tols[4];
+  armFL135UnderTol = tols[5];
   
   delay(250);
 
@@ -231,15 +230,15 @@ void setTolerances() {
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  avgs = computeTol();
+  computeTol(&tols[0]);
   
-  armFR180BackTol = avgs[0];
-  armFR180ShoulderTol = avgs[1];
-  armFR180UnderTol = avgs[2];
+  armFR180BackTol = tols[0];
+  armFR180ShoulderTol = tols[1];
+  armFR180UnderTol = tols[2];
   
-  armFL180BackTol = avgs[3];
-  armFL180ShoulderTol = avgs[4];
-  armFL180UnderTol = avgs[5];
+  armFL180BackTol = tols[3];
+  armFL180ShoulderTol = tols[4];
+  armFL180UnderTol = tols[5];
   
   delay(250);
 
@@ -249,9 +248,9 @@ void setTolerances() {
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  avgs = computeTol();
+  computeTol(&tols[0]);
   
-  backStraightBackTol = avgs[0];
+  backStraightBackTol = tols[0];
 
   delay(250);
   
@@ -261,9 +260,9 @@ void setTolerances() {
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  avgs = computeTol();
+  computeTol(&tols[0]);
   
-  backBentFBackTol = avgs[0];
+  backBentFBackTol = tols[0];
   
   delay(250);
   
@@ -273,9 +272,9 @@ void setTolerances() {
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
   
-  avgs = computeTol();
+  computeTol(&tols[0]);
 
-  backBentBBackTol = avgs[0];
+  backBentBBackTol = tols[0];
   
   delay(250);
 }
