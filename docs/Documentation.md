@@ -82,10 +82,15 @@ These are our full plans, describing where the project will go in the future. So
 ## Research
 
 ### General
-<!--TODO: write -->
+To begin our research, we began by looking into our competitors, as well as available applications that help users learn yoga. We found that in both of these cases the user was not given real-time feedback during their activity, and even if they were, it gave feedback on information such as muscle fatigue, heartrate, and breathing rate rather than relative positioning of body parts. Due to this research, we knew we needed to find some kind of sensor and microcontroller that could handle the data we needed to obtain, make the product feel like any other excercise clothing, and give feedback to the user to make sure they are performing and improving correctly in order to avoid injury. 
 
 ### Sensors
-<!--TODO: write -->
+We researched many different kinds of possible sensors to use for our product. Our initial thought was to use some sort of flex or pressure sensor. These, upon bending, register changes in movement and could give us data to determine a person's position. We went through the process of pricing them out, found they were a bit pricey, and then tried to make our own. This could have been done, but it is a tedious and time consuming process. In addition, the flex sensors were a bit bulky and would be felt by the user upon changing their position. 
+
+<!--Do we even add in EMG sensors as part of process?-->
+We also researched EMG sensors, which stands for electromyogram and tracks muscle activity. Some of the competing products (primarily Athos) use these. The problem was we were not sure if we could obtain accurate readings about body position based off muscle activity and fatigue. When you move your arm from by your side to above your head, there are so many muslces working throughout just your upper body, and with so much data coming in, it would become complicated to parse and figure out exactly what your body was doing at that time. 
+
+In the end, after talking to our professor and other classmates, we were pointed in the direction of conductive fabric. After some research, we found that this would be less expensive, more accurate, and would enable us to make a more aesthetically pleasing and comfortable product. With the conductive fabric sewn on and connected to the microcontroller via conductive thread, it is essentially unnoticable to the user, meaning it does not interfere with their workouts or movements. 
 
 ### Microcontrollers
 The selection of a microcontroller was very important to us. We had strict critera due to the nature of our project. The microcontroller would have to be attached to the shirt in some way and remain on the user for the duration of its use so it had to be small and not noticeable. Aside from size, power requirements, price and analog inputs were large deciding factors.
@@ -107,7 +112,7 @@ USB Native           | FTDI-Compatible Header | USB Native
 large for wearable   | small enough to wear   | very small
 
 ### Competitors
-<!--TODO: write -->
+<!--Do we need more of an explaination here?-->
  - [Athos](http://www.liveathos.com)
  - [Myo](https://www.thalmic.com/en/myo/)
  - [Myontec](http://www.myontec.com/en/)
@@ -146,7 +151,7 @@ With the help of the diagram we laid out the components of the circuit on a smal
 
 The connection to the shirt is a custom built cable bus that extends off of our circuit board. The cable bus coming off of the circuit consists of 6 or 10 wires (depending on the version) arranged in a rectangle. These wires are then secured in place with electrical tape. A similar cable bus is also attached to the shirt, with female adapters. This system allows for us to attach the circuit to the shirt in a secure way, while allowing the user to remove the circuit when they need to wash the shirt.
 
-Once connected to the shirt, the circuit is housed in a small case made of foam core. The case serves as a way to attach the circuit to your waist, protect the circuit during exercise and provide a more asthetically pleasing product.
+Once connected to the shirt, the circuit is housed in a small case made of foam core. The case serves as a way to attach the circuit to your waist, protect the circuit during exercise and provide a more aesthetically pleasing product.
 
 ### Shirt Diagrams
 <!--![Diagram of Shirt](link.to.gihub/goes.here "Diagram of shirt")-->
