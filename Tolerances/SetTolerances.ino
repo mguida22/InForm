@@ -87,6 +87,7 @@ void setTolerances() {
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   computeTol(&tols[0]);
   
@@ -105,6 +106,7 @@ void setTolerances() {
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   computeTol(&tols[0]);
   
@@ -123,6 +125,7 @@ void setTolerances() {
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   computeTol(&tols[0]);
   
@@ -141,6 +144,7 @@ void setTolerances() {
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   computeTol(&tols[0]);
   
@@ -159,6 +163,7 @@ void setTolerances() {
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   computeTol(&tols[0]);
   
@@ -175,6 +180,7 @@ void setTolerances() {
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   computeTol(&tols[0]);
   
@@ -193,6 +199,7 @@ void setTolerances() {
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   computeTol(&tols[0]);
   
@@ -211,6 +218,7 @@ void setTolerances() {
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   computeTol(&tols[0]);
   
@@ -229,6 +237,7 @@ void setTolerances() {
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   computeTol(&tols[0]);
   
@@ -247,6 +256,7 @@ void setTolerances() {
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   computeTol(&tols[0]);
   
@@ -259,6 +269,7 @@ void setTolerances() {
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   computeTol(&tols[0]);
   
@@ -271,6 +282,7 @@ void setTolerances() {
   
   //wait for button press
   while(digitalRead(buttonPin) != 1){}
+  delay(1000);
   
   computeTol(&tols[0]);
 
