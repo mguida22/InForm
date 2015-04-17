@@ -110,16 +110,9 @@ int armFL180UnderTol = -1;
 
 // -------- backStraight --------
 int backStraightBackTol = -1;
-int backStraightShoulderTol = -1;
-int backStraightUnderTol = -1;
 
 // -------- backBentFwd --------
 int backBentFBackTol = -1;
-int backBentFShoulderTol = -1;
-int backBentFUnderTol = -1;
 
 // -------- backBentBack --------
-int backBentBBackTol = -1;
-int backBentBShoulderTol = -1;
-int backBentBUnderTol = -1;
-
+int backBentBBackTol = -1

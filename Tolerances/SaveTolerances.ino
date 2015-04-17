@@ -209,32 +209,14 @@ void sendTolerances(){
   Serial.print("int backStraightBackTol = ");
   Serial.print(backStraightBackTol);
   Serial.println(";");
-  Serial.print("int backStraightShoulderTol = ");
-  Serial.print(backStraightShoulderTol);
-  Serial.println(";");
-  Serial.print("int backStraightUnderTol = ");
-  Serial.print(backStraightUnderTol);
-  Serial.println(";");
   
   // -------- backBentFwd --------
   Serial.print("int backBentFBackTol = ");
   Serial.print(backBentFBackTol);
   Serial.println(";");
-  Serial.print("int backBentFShoulderTol = ");
-  Serial.print(backBentFShoulderTol);
-  Serial.println(";");
-  Serial.print("int backBentFUnderTol = ");
-  Serial.print(backBentFUnderTol);
-  Serial.println(";");
   
   // -------- backBentBack --------
   Serial.print("int backBentBBackTol = ");
   Serial.print(backBentBBackTol);
-  Serial.println(";");
-  Serial.print("int backBentBShoulderTol = ");
-  Serial.print(backBentBShoulderTol);
-  Serial.println(";");
-  Serial.print("int backBentBUnderTol = ");
-  Serial.print(backBentBUnderTol);
   Serial.println(";");
 }
