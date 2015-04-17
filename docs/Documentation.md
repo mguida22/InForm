@@ -91,7 +91,6 @@ To begin our research, we began by looking into our competitors, as well as avai
 ### Sensors
 We researched many different kinds of possible sensors to use for our product. Our initial thought was to use some sort of flex or pressure sensor. These, upon bending, register changes in movement and could give us data to determine a person's position. We went through the process of pricing them out, found they were a bit pricey, and then tried to make our own. This could have been done, but it is a tedious and time consuming process. In addition, the flex sensors were a bit bulky and would be felt by the user upon changing their position. 
 
-<!--Do we even add in EMG sensors as part of process?-->
 We also researched EMG sensors, which stands for electromyogram and tracks muscle activity. Some of the competing products (primarily Athos) use these. The problem was we were not sure if we could obtain accurate readings about body position based off muscle activity and fatigue. When you move your arm from by your side to above your head, there are so many muslces working throughout just your upper body, and with so much data coming in, it would become complicated to parse and figure out exactly what your body was doing at that time. 
 
 In the end, after talking to our professor and other classmates, we were pointed in the direction of conductive fabric. After some research, we found that this would be less expensive, more accurate, and would enable us to make a more aesthetically pleasing and comfortable product. With the conductive fabric sewn on and connected to the microcontroller via conductive thread, it is essentially unnoticable to the user, meaning it does not interfere with their workouts or movements. 
@@ -116,12 +115,15 @@ USB Native           | FTDI-Compatible Header | USB Native
 large for wearable   | small enough to wear   | very small
 
 ### Competitors
-<!--Do we need more of an explaination here?-->
+<!--1 sentence summary of each product.-->
  - [Athos](http://www.liveathos.com)
+ 	- Clothing that your muscle effort, heart and breathing rates and sends it to a mobile device. 
  - [Myo](https://www.thalmic.com/en/myo/)
+ 	- A gesture control armband.
  - [Myontec](http://www.myontec.com/en/)
+ 	- Monitors bio-signals during workout.
  - [Zypher](http://www.zephyranywherestore.com/BioHarness-3-Team-Compression-Shirts/dp/B009ZTUDCC)
-
+	- Measures aspects of workout (heart rate, heart rate recovery, GPS, etc.).
 
 ## Hardware Implementation
 <!--TODO-MG: write, diagrams of circuit -->
