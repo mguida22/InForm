@@ -14,13 +14,13 @@ else:
     ser = serial.Serial(port, baudrate)
 
 # Clear files old contents and header comments
-f = open('../SensorShirt/Tolerances.h', 'w')
-f.write('/*\n * Tolerances.h\n * Kylie Dale and Michael Guida\n */\n\n')
+f = open('../SensorShirt/Data.h', 'w')
+f.write('/*\n * Data.h\n * Kylie Dale and Michael Guida\n */\n\n')
 f.close()
 
 while 1:
-	# Append any data from the serial port to the Tolerances.h file
-	f = open('../SensorShirt/Tolerances.h','a')
+	# Append any data from the serial port to the Data.h file
+	f = open('../SensorShirt/Data.h','a')
 	f.write(ser.readline())
 	print('...')
 	f.close()

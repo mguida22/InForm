@@ -220,3 +220,220 @@ void sendTolerances(){
   Serial.print(backBentBBackTol);
   Serial.println(";");
 }
+
+void sendValues(){
+  // -------- armSideRight ---------
+  Serial.print("int armSRBackVal = ");
+  Serial.print(armSRBackVal);
+  Serial.println(";");
+  Serial.print("int armSRShoulderVal = ");
+  Serial.print(armSRShoulderVal);
+  Serial.println(";");
+  Serial.print("int armSRUnderVal = ");
+  Serial.print(armSRUnderVal);
+  Serial.println(";");
+
+  // -------- armSideRight45 --------
+  Serial.print("int armSR45BackVal = ");
+  Serial.print(armSR45BackVal);
+  Serial.println(";");
+  Serial.print("int armSR45ShoulderVal = ");
+  Serial.print(armSR45ShoulderVal);
+  Serial.println(";");
+  Serial.print("int armSR45UnderVal = ");
+  Serial.print(armSR45UnderVal);
+  Serial.println(";");
+  
+  // -------- armSideRight90 --------
+  Serial.print("int armSR90BackVal = ");
+  Serial.print(armSR90BackVal);
+  Serial.println(";");
+  Serial.print("int armSR90ShoulderVal = ");
+  Serial.print(armSR90ShoulderVal);
+  Serial.println(";");
+  Serial.print("int armSR90UnderVal = ");
+  Serial.print(armSR90UnderVal);
+  Serial.println(";");
+  
+  // -------- armSideRight135 --------
+  Serial.print("int armSR135BackVal = ");
+  Serial.print(armSR135BackVal);
+  Serial.println(";");
+  Serial.print("int armSR135ShoulderVal = ");
+  Serial.print(armSR135ShoulderVal);
+  Serial.println(";");
+  Serial.print("int armSR135UnderVal = ");
+  Serial.print(armSR135UnderVal);
+  Serial.println(";");
+  
+  // -------- armSideRight180 --------
+  Serial.print("int armSR180BackVal = ");
+  Serial.print(armSR180BackVal);
+  Serial.println(";");
+  Serial.print("int armSR180ShoulderVal = ");
+  Serial.print(armSR180ShoulderVal);
+  Serial.println(";");
+  Serial.print("int armSR180UnderVal = ");
+  Serial.print(armSR180UnderVal);
+  Serial.println(";");
+  
+  // -------- armFwdRight45 --------
+  Serial.print("int armFR45BackVal = ");
+  Serial.print(armFR45BackVal);
+  Serial.println(";");
+  Serial.print("int armFR45ShoulderVal = ");
+  Serial.print(armFR45ShoulderVal);
+  Serial.println(";");
+  Serial.print("int armFR45UnderVal = ");
+  Serial.print(armFR45UnderVal);
+  Serial.println(";");
+  
+  // -------- armFwdRight90 --------
+  Serial.print("int armFR90BackVal = ");
+  Serial.print(armFR90BackVal);
+  Serial.println(";");
+  Serial.print("int armFR90ShoulderVal = ");
+  Serial.print(armFR90ShoulderVal);
+  Serial.println(";");
+  Serial.print("int armFR90UnderVal = ");
+  Serial.print(armFR90UnderVal);
+  Serial.println(";");
+  
+  // -------- armFwdRight135 --------
+  Serial.print("int armFR135BackVal = ");
+  Serial.print(armFR135BackVal);
+  Serial.println(";");
+  Serial.print("int armFR135ShoulderVal = ");
+  Serial.print(armFR135ShoulderVal);
+  Serial.println(";");
+  Serial.print("int armFR135UnderVal = ");
+  Serial.print(armFR135UnderVal);
+  Serial.println(";");
+  
+  // -------- armFwdRight180 --------
+  Serial.print("int armFR180BackVal = ");
+  Serial.print(armFR180BackVal);
+  Serial.println(";");
+  Serial.print("int armFR180ShoulderVal = ");
+  Serial.print(armFR180ShoulderVal);
+  Serial.println(";");
+  Serial.print("int armFR180UnderVal = ");
+  Serial.print(armFR180UnderVal);
+  Serial.println(";");
+  
+  // ------------------------ Left ------------------------
+  
+  // -------- armSideLeft --------
+  Serial.print("int armSLBackVal = ");
+  Serial.print(armSLBackVal);
+  Serial.println(";");
+  Serial.print("int armSLShoulderVal = ");
+  Serial.print(armSLShoulderVal);
+  Serial.println(";");
+  Serial.print("int armSLUnderVal = ");
+  Serial.print(armSLUnderVal);
+  Serial.println(";");
+  
+  // -------- armSideLeft45 --------
+  Serial.print("int armSL45BackVal = ");
+  Serial.print(armSL45BackVal);
+  Serial.println(";");
+  Serial.print("int armSL45ShoulderVal = ");
+  Serial.print(armSL45ShoulderVal);
+  Serial.println(";");
+  Serial.print("int armSL45UnderVal = ");
+  Serial.print(armSL45UnderVal);
+  Serial.println(";");
+  
+  // -------- armSideLeft90 --------
+  Serial.print("int armSL90BackVal = ");
+  Serial.print(armSL90BackVal);
+  Serial.println(";");
+  Serial.print("int armSL90ShoulderVal = ");
+  Serial.print(armSL90ShoulderVal);
+  Serial.println(";");
+  Serial.print("int armSL90UnderVal = ");
+  Serial.print(armSL90UnderVal);
+  Serial.println(";");
+  
+  // -------- armSideLeft135 --------
+  Serial.print("int armSL135BackVal = ");
+  Serial.print(armSL135BackVal);
+  Serial.println(";");
+  Serial.print("int armSL135ShoulderVal = ");
+  Serial.print(armSL135ShoulderVal);
+  Serial.println(";");
+  Serial.print("int armSL135UnderVal = ");
+  Serial.print(armSL135UnderVal);
+  Serial.println(";");
+  
+  // -------- armSideLeft180 --------
+  Serial.print("int armSL180BackVal = ");
+  Serial.print(armSL180BackVal);
+  Serial.println(";");
+  Serial.print("int armSL180ShoulderVal = ");
+  Serial.print(armSL180ShoulderVal);
+  Serial.println(";");
+  Serial.print("int armSL180UnderVal = ");
+  Serial.print(armSL180UnderVal);
+  Serial.println(";");
+  
+  // -------- armFwdLeft45 --------
+  Serial.print("int armFL45BackVal = ");
+  Serial.print(armFL45BackVal);
+  Serial.println(";");
+  Serial.print("int armFL45ShoulderVal = ");
+  Serial.print(armFL45ShoulderVal);
+  Serial.println(";");
+  Serial.print("int armFL45UnderVal = ");
+  Serial.print(armFL45UnderVal);
+  Serial.println(";");
+  
+  // -------- armFwdLeft90 --------
+  Serial.print("int armFL90BackVal = ");
+  Serial.print(armFL90BackVal);
+  Serial.println(";");
+  Serial.print("int armFL90ShoulderVal = ");
+  Serial.print(armFL90ShoulderVal);
+  Serial.println(";");
+  Serial.print("int armFL90UnderVal = ");
+  Serial.print(armFL90UnderVal);
+  Serial.println(";");
+  
+  // -------- armFwdLeft135 --------
+  Serial.print("int armFL135BackVal = ");
+  Serial.print(armFL135BackVal);
+  Serial.println(";");
+  Serial.print("int armFL135ShoulderVal = ");
+  Serial.print(armFL135ShoulderVal);
+  Serial.println(";");
+  Serial.print("int armFL135UnderVal = ");
+  Serial.print(armFL135UnderVal);
+  Serial.println(";");
+  
+  // -------- armFwdLeft180 --------
+  Serial.print("int armFL180BackVal = ");
+  Serial.print(armFL180BackVal);
+  Serial.println(";");
+  Serial.print("int armFL180ShoulderVal = ");
+  Serial.print(armFL180ShoulderVal);
+  Serial.println(";");
+  Serial.print("int armFL180UnderVal = ");
+  Serial.print(armFL180UnderVal);
+  Serial.println(";");
+  
+  // -------- backStraight --------
+  Serial.print("int backStraightBackVal = ");
+  Serial.print(backStraightBackVal);
+  Serial.println(";");
+  
+  // -------- backBentFwd --------
+  Serial.print("int backBentFBackVal = ");
+  Serial.print(backBentFBackVal);
+  Serial.println(";");
+  
+  // -------- backBentBack --------
+  Serial.print("int backBentBBackVal = ");
+  Serial.print(backBentBBackVal);
+  Serial.println(";");
+}

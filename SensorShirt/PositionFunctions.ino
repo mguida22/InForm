@@ -6,9 +6,9 @@
 // ------------------------ Right ------------------------
 
 boolean armAtSideRight() {
-  if(backValue > (armSRBackVal - armSRBackTol) && backValue < (armSRBackVal + armSRBackTol)) {
-    if(rShoulderValue > (armSRShoulderVal - armSRShoulderTol) && rShoulderValue < (armSRShoulderVal + armSRShoulderTol)) {
-      if(rUnderarmValue > (armSRUnderVal - armSRUnderTol) && rUnderarmValue < (armSRUnderVal + armSRUnderTol)) {
+  if(analogRead(backPin) > (armSRBackVal - armSRBackTol) && analogRead(backPin) < (armSRBackVal + armSRBackTol)) {
+    if(analogRead(rShoulderPin) > (armSRShoulderVal - armSRShoulderTol) && analogRead(rShoulderPin) < (armSRShoulderVal + armSRShoulderTol)) {
+      if(analogRead(rUnderarmPin) > (armSRUnderVal - armSRUnderTol) && analogRead(rUnderarmPin) < (armSRUnderVal + armSRUnderTol)) {
         return true;
       }
     }
@@ -17,9 +17,9 @@ boolean armAtSideRight() {
 }
 
 boolean armSideRight45() {
-  if(backValue > (armSR45BackVal - armSR45BackTol) && backValue < (armSR45BackVal + armSR45BackTol)) {
-    if(rShoulderValue > (armSR45ShoulderVal - armSR45ShoulderTol) && rShoulderValue < (armSR45ShoulderVal + armSR45ShoulderTol)) {
-      if(rUnderarmValue > (armSR45UnderVal - armSR45UnderTol) && rUnderarmValue < (armSR45UnderVal + armSR45UnderTol)) {
+  if(analogRead(backPin) > (armSR45BackVal - armSR45BackTol) && analogRead(backPin) < (armSR45BackVal + armSR45BackTol)) {
+    if(analogRead(rShoulderPin) > (armSR45ShoulderVal - armSR45ShoulderTol) && analogRead(rShoulderPin) < (armSR45ShoulderVal + armSR45ShoulderTol)) {
+      if(analogRead(rUnderarmPin) > (armSR45UnderVal - armSR45UnderTol) && analogRead(rUnderarmPin) < (armSR45UnderVal + armSR45UnderTol)) {
         return true;
       }
     }
@@ -28,9 +28,9 @@ boolean armSideRight45() {
 }
 
 boolean armSideRight90() {
-  if(backValue > (armSR90BackVal - armSR90BackTol) && backValue < (armSR90BackVal + armSR90BackTol)) {
-    if(rShoulderValue > (armSR90ShoulderVal - armSR90ShoulderTol) && rShoulderValue < (armSR90ShoulderVal + armSR90ShoulderTol)) {
-      if(rUnderarmValue > (armSR90UnderVal - armSR90UnderTol) && rUnderarmValue < (armSR90UnderVal + armSR90UnderTol)) {
+  if(analogRead(backPin) > (armSR90BackVal - armSR90BackTol) && analogRead(backPin) < (armSR90BackVal + armSR90BackTol)) {
+    if(analogRead(rShoulderPin) > (armSR90ShoulderVal - armSR90ShoulderTol) && analogRead(rShoulderPin) < (armSR90ShoulderVal + armSR90ShoulderTol)) {
+      if(analogRead(rUnderarmPin) > (armSR90UnderVal - armSR90UnderTol) && analogRead(rUnderarmPin) < (armSR90UnderVal + armSR90UnderTol)) {
         return true;
       }
     }
@@ -39,9 +39,9 @@ boolean armSideRight90() {
 }
 
 boolean armSideRight135() {
-  if(backValue > (armSR135BackVal - armSR135BackTol) && backValue < (armSR135BackVal + armSR135BackTol)) {
-    if(rShoulderValue > (armSR135ShoulderVal - armSR135ShoulderTol) && rShoulderValue < (armSR135ShoulderVal + armSR135ShoulderTol)) {
-      if(rUnderarmValue > (armSR135UnderVal - armSR135UnderTol) && rUnderarmValue < (armSR135UnderVal + armSR135UnderTol)) {
+  if(analogRead(backPin) > (armSR135BackVal - armSR135BackTol) && analogRead(backPin) < (armSR135BackVal + armSR135BackTol)) {
+    if(analogRead(rShoulderPin) > (armSR135ShoulderVal - armSR135ShoulderTol) && analogRead(rShoulderPin) < (armSR135ShoulderVal + armSR135ShoulderTol)) {
+      if(analogRead(rUnderarmPin) > (armSR135UnderVal - armSR135UnderTol) && analogRead(rUnderarmPin) < (armSR135UnderVal + armSR135UnderTol)) {
         return true;
       }
     }
@@ -50,9 +50,9 @@ boolean armSideRight135() {
 }
 
 boolean armSideRight180() {
-  if(backValue > (armSR180BackVal - armSR180BackTol) && backValue < (armSR180BackVal + armSR180BackTol)) {
-    if(rShoulderValue > (armSR180ShoulderVal - armSR180ShoulderTol) && rShoulderValue < (armSR180ShoulderVal + armSR180ShoulderTol)) {
-      if(rUnderarmValue > (armSR180UnderVal - armSR180UnderTol) && rUnderarmValue < (armSR180UnderVal + armSR180UnderTol)) {
+  if(analogRead(backPin) > (armSR180BackVal - armSR180BackTol) && analogRead(backPin) < (armSR180BackVal + armSR180BackTol)) {
+    if(analogRead(rShoulderPin) > (armSR180ShoulderVal - armSR180ShoulderTol) && analogRead(rShoulderPin) < (armSR180ShoulderVal + armSR180ShoulderTol)) {
+      if(analogRead(rUnderarmPin) > (armSR180UnderVal - armSR180UnderTol) && analogRead(rUnderarmPin) < (armSR180UnderVal + armSR180UnderTol)) {
         return true;
       }
     }
@@ -61,9 +61,9 @@ boolean armSideRight180() {
 }
 
 boolean armFwdRight45() {
-  if(backValue > (armFR45BackVal - armFR45BackTol) && backValue < (armFR45BackVal + armFR45BackTol)) {
-    if(rShoulderValue > (armFR45ShoulderVal - armFR45ShoulderTol) && rShoulderValue < (armFR45ShoulderVal + armFR45ShoulderTol)) {
-      if(rUnderarmValue > (armFR45UnderVal - armFR45UnderTol) && rUnderarmValue < (armFR45UnderVal + armFR45UnderTol)) {
+  if(analogRead(backPin) > (armFR45BackVal - armFR45BackTol) && analogRead(backPin) < (armFR45BackVal + armFR45BackTol)) {
+    if(analogRead(rShoulderPin) > (armFR45ShoulderVal - armFR45ShoulderTol) && analogRead(rShoulderPin) < (armFR45ShoulderVal + armFR45ShoulderTol)) {
+      if(analogRead(rUnderarmPin) > (armFR45UnderVal - armFR45UnderTol) && analogRead(rUnderarmPin) < (armFR45UnderVal + armFR45UnderTol)) {
         return true;
       }
     }
@@ -72,21 +72,20 @@ boolean armFwdRight45() {
 }
 
 boolean armFwdRight90() {
-  
-  if(backValue > (armFR90BackVal - armFR90BackTol) && backValue < (armFR90BackVal + armFR90BackTol)) {
-    if(rShoulderValue > (armFR90ShoulderVal - armFR90ShoulderTol) && rShoulderValue < (armFR90ShoulderVal + armFR90ShoulderTol)) {
-      if(rUnderarmValue > (armFR90UnderVal - armFR90UnderTol) && rUnderarmValue < (armFR90UnderVal + armFR90UnderTol)) {
+  //if(analogRead(backPin) > (armFR90BackVal - armFR90BackTol) && analogRead(backPin) < (armFR90BackVal + armFR90BackTol)) {
+    if(analogRead(rShoulderPin) > (armFR90ShoulderVal - armFR90ShoulderTol) && analogRead(rShoulderPin) < (armFR90ShoulderVal + armFR90ShoulderTol)) {
+      if(analogRead(rUnderarmPin) > (armFR90UnderVal - armFR90UnderTol) && analogRead(rUnderarmPin) < (armFR90UnderVal + armFR90UnderTol)) {
         return true;
       }
     }
-  }
+  //}
   return false;
 }
 
 boolean armFwdRight135() {
-  if(backValue > (armFR135BackVal - armFR135BackTol) && backValue < (armFR135BackVal + armFR135BackTol)) {
-    if(rShoulderValue > (armFR135ShoulderVal - armFR135ShoulderTol) && rShoulderValue < (armFR135ShoulderVal + armFR135ShoulderTol)) {
-      if(rUnderarmValue > (armFR135UnderVal - armFR135UnderTol) && rUnderarmValue < (armFR135UnderVal + armFR135UnderTol)) {
+  if(analogRead(backPin) > (armFR135BackVal - armFR135BackTol) && analogRead(backPin) < (armFR135BackVal + armFR135BackTol)) {
+    if(analogRead(rShoulderPin) > (armFR135ShoulderVal - armFR135ShoulderTol) && analogRead(rShoulderPin) < (armFR135ShoulderVal + armFR135ShoulderTol)) {
+      if(analogRead(rUnderarmPin) > (armFR135UnderVal - armFR135UnderTol) && analogRead(rUnderarmPin) < (armFR135UnderVal + armFR135UnderTol)) {
         return true;
       }
     }
@@ -95,9 +94,9 @@ boolean armFwdRight135() {
 }
 
 boolean armFwdRight180() {
-  if(backValue > (armFR180BackVal - armFR180BackTol) && backValue < (armFR180BackVal + armFR180BackTol)) {
-    if(rShoulderValue > (armFR180ShoulderVal - armFR180ShoulderTol) && rShoulderValue < (armFR180ShoulderVal + armFR180ShoulderTol)) {
-      if(rUnderarmValue > (armFR180UnderVal - armFR180UnderTol) && rUnderarmValue < (armFR180UnderVal + armFR180UnderTol)) {
+  if(analogRead(backPin) > (armFR180BackVal - armFR180BackTol) && analogRead(backPin) < (armFR180BackVal + armFR180BackTol)) {
+    if(analogRead(rShoulderPin) > (armFR180ShoulderVal - armFR180ShoulderTol) && analogRead(rShoulderPin) < (armFR180ShoulderVal + armFR180ShoulderTol)) {
+      if(analogRead(rUnderarmPin) > (armFR180UnderVal - armFR180UnderTol) && analogRead(rUnderarmPin) < (armFR180UnderVal + armFR180UnderTol)) {
         return true;
       }
     }
@@ -108,9 +107,9 @@ boolean armFwdRight180() {
 // ------------------------- Left -------------------------
 
 boolean armAtSideLeft() {
-  if(backValue > (armSLBackVal - armSLBackTol) && backValue < (armSLBackVal + armSLBackTol)) {
-    if(lShoulderValue > (armSLShoulderVal - armSLShoulderTol) && lShoulderValue < (armSLShoulderVal + armSLShoulderTol)) {
-      if(lUnderarmValue > (armSLUnderVal - armSLUnderTol) && lUnderarmValue < (armSLUnderVal + armSLUnderTol)) {
+  if(analogRead(backPin) > (armSLBackVal - armSLBackTol) && analogRead(backPin) < (armSLBackVal + armSLBackTol)) {
+    if(analogRead(lShoulderPin) > (armSLShoulderVal - armSLShoulderTol) && analogRead(lShoulderPin) < (armSLShoulderVal + armSLShoulderTol)) {
+      if(analogRead(lUnderarmPin) > (armSLUnderVal - armSLUnderTol) && analogRead(lUnderarmPin) < (armSLUnderVal + armSLUnderTol)) {
         return true;
       }
     }
@@ -119,9 +118,9 @@ boolean armAtSideLeft() {
 }
 
 boolean armSideLeft45() {
-  if(backValue > (armSL45BackVal - armSL45BackTol) && backValue < (armSL45BackVal + armSL45BackTol)) {
-    if(lShoulderValue > (armSL45ShoulderVal - armSL45ShoulderTol) && lShoulderValue < (armSL45ShoulderVal + armSL45ShoulderTol)) {
-      if(lUnderarmValue > (armSL45UnderVal - armSL45UnderTol) && lUnderarmValue < (armSL45UnderVal + armSL45UnderTol)) {
+  if(analogRead(backPin) > (armSL45BackVal - armSL45BackTol) && analogRead(backPin) < (armSL45BackVal + armSL45BackTol)) {
+    if(analogRead(lShoulderPin) > (armSL45ShoulderVal - armSL45ShoulderTol) && analogRead(lShoulderPin) < (armSL45ShoulderVal + armSL45ShoulderTol)) {
+      if(analogRead(lUnderarmPin) > (armSL45UnderVal - armSL45UnderTol) && analogRead(lUnderarmPin) < (armSL45UnderVal + armSL45UnderTol)) {
         return true;
       }
     }
@@ -130,9 +129,9 @@ boolean armSideLeft45() {
 }
 
 boolean armSideLeft90() {
-  if(backValue > (armSL90BackVal - armSL90BackTol) && backValue < (armSL90BackVal + armSL90BackTol)) {
-    if(lShoulderValue > (armSL90ShoulderVal - armSL90ShoulderTol) && lShoulderValue < (armSL90ShoulderVal + armSL90ShoulderTol)) {
-      if(lUnderarmValue > (armSL90UnderVal - armSL90UnderTol) && lUnderarmValue < (armSL90UnderVal + armSL90UnderTol)) {
+  if(analogRead(backPin) > (armSL90BackVal - armSL90BackTol) && analogRead(backPin) < (armSL90BackVal + armSL90BackTol)) {
+    if(analogRead(lShoulderPin) > (armSL90ShoulderVal - armSL90ShoulderTol) && analogRead(lShoulderPin) < (armSL90ShoulderVal + armSL90ShoulderTol)) {
+      if(analogRead(lUnderarmPin) > (armSL90UnderVal - armSL90UnderTol) && analogRead(lUnderarmPin) < (armSL90UnderVal + armSL90UnderTol)) {
         return true;
       }
     }
@@ -141,9 +140,9 @@ boolean armSideLeft90() {
 }
 
 boolean armSideLeft135() {
-  if(backValue > (armSL135BackVal - armSL135BackTol) && backValue < (armSL135BackVal + armSL135BackTol)) {
-    if(lShoulderValue > (armSL135ShoulderVal - armSL135ShoulderTol) && lShoulderValue < (armSL135ShoulderVal + armSL135ShoulderTol)) {
-      if(lUnderarmValue > (armSL135UnderVal - armSL135UnderTol) && lUnderarmValue < (armSL135UnderVal + armSL135UnderTol)) {
+  if(analogRead(backPin) > (armSL135BackVal - armSL135BackTol) && analogRead(backPin) < (armSL135BackVal + armSL135BackTol)) {
+    if(analogRead(lShoulderPin) > (armSL135ShoulderVal - armSL135ShoulderTol) && analogRead(lShoulderPin) < (armSL135ShoulderVal + armSL135ShoulderTol)) {
+      if(analogRead(lUnderarmPin) > (armSL135UnderVal - armSL135UnderTol) && analogRead(lUnderarmPin) < (armSL135UnderVal + armSL135UnderTol)) {
         return true;
       }
     }
@@ -152,9 +151,9 @@ boolean armSideLeft135() {
 }
 
 boolean armSideLeft180() {
-  if(backValue > (armSL180BackVal - armSL180BackTol) && backValue < (armSL180BackVal + armSL180BackTol)) {
-    if(lShoulderValue > (armSL180ShoulderVal - armSL180ShoulderTol) && lShoulderValue < (armSL180ShoulderVal + armSL180ShoulderTol)) {
-      if(lUnderarmValue > (armSL180UnderVal - armSL180UnderTol) && lUnderarmValue < (armSL180UnderVal + armSL180UnderTol)) {
+  if(analogRead(backPin) > (armSL180BackVal - armSL180BackTol) && analogRead(backPin) < (armSL180BackVal + armSL180BackTol)) {
+    if(analogRead(lShoulderPin) > (armSL180ShoulderVal - armSL180ShoulderTol) && analogRead(lShoulderPin) < (armSL180ShoulderVal + armSL180ShoulderTol)) {
+      if(analogRead(lUnderarmPin) > (armSL180UnderVal - armSL180UnderTol) && analogRead(lUnderarmPin) < (armSL180UnderVal + armSL180UnderTol)) {
         return true;
       }
     }
@@ -163,9 +162,9 @@ boolean armSideLeft180() {
 }
 
 boolean armFwdLeft45() {
-  if(backValue > (armFL45BackVal - armFL45BackTol) && backValue < (armFL45BackVal + armFL45BackTol)) {
-    if(lShoulderValue > (armFL45ShoulderVal - armFL45ShoulderTol) && lShoulderValue < (armFL45ShoulderVal + armFL45ShoulderTol)) {
-      if(lUnderarmValue > (armFL45UnderVal - armFL45UnderTol) && lUnderarmValue < (armFL45UnderVal + armFL45UnderTol)) {
+  if(analogRead(backPin) > (armFL45BackVal - armFL45BackTol) && analogRead(backPin) < (armFL45BackVal + armFL45BackTol)) {
+    if(analogRead(lShoulderPin) > (armFL45ShoulderVal - armFL45ShoulderTol) && analogRead(lShoulderPin) < (armFL45ShoulderVal + armFL45ShoulderTol)) {
+      if(analogRead(lUnderarmPin) > (armFL45UnderVal - armFL45UnderTol) && analogRead(lUnderarmPin) < (armFL45UnderVal + armFL45UnderTol)) {
         return true;
       }
     }
@@ -174,9 +173,9 @@ boolean armFwdLeft45() {
 }
 
 boolean armFwdLeft90() {
-  if(backValue > (armFL90BackVal - armFL90BackTol) && backValue < (armFL90BackVal + armFL90BackTol)) {
-    if(lShoulderValue > (armFL90ShoulderVal - armFL90ShoulderTol) && lShoulderValue < (armFL90ShoulderVal + armFL90ShoulderTol)) {
-      if(lUnderarmValue > (armFL90UnderVal - armFL90UnderTol) && lUnderarmValue < (armFL90UnderVal + armFL90UnderTol)) {
+  if(analogRead(backPin) > (armFL90BackVal - armFL90BackTol) && analogRead(backPin) < (armFL90BackVal + armFL90BackTol)) {
+    if(analogRead(lShoulderPin) > (armFL90ShoulderVal - armFL90ShoulderTol) && analogRead(lShoulderPin) < (armFL90ShoulderVal + armFL90ShoulderTol)) {
+      if(analogRead(lUnderarmPin) > (armFL90UnderVal - armFL90UnderTol) && analogRead(lUnderarmPin) < (armFL90UnderVal + armFL90UnderTol)) {
         return true;
       }
     }
@@ -185,9 +184,9 @@ boolean armFwdLeft90() {
 }
 
 boolean armFwdLeft135() {
-  if(backValue > (armFL135BackVal - armFL135BackTol) && backValue < (armFL135BackVal + armFL135BackTol)) {
-    if(lShoulderValue > (armFL135ShoulderVal - armFL135ShoulderTol) && lShoulderValue < (armFL135ShoulderVal + armFL135ShoulderTol)) {
-      if(lUnderarmValue > (armFL135UnderVal - armFL135UnderTol) && lUnderarmValue < (armFL135UnderVal + armFL135UnderTol)) {
+  if(analogRead(backPin) > (armFL135BackVal - armFL135BackTol) && analogRead(backPin) < (armFL135BackVal + armFL135BackTol)) {
+    if(analogRead(lShoulderPin) > (armFL135ShoulderVal - armFL135ShoulderTol) && analogRead(lShoulderPin) < (armFL135ShoulderVal + armFL135ShoulderTol)) {
+      if(analogRead(lUnderarmPin) > (armFL135UnderVal - armFL135UnderTol) && analogRead(lUnderarmPin) < (armFL135UnderVal + armFL135UnderTol)) {
         return true;
       }
     }
@@ -196,9 +195,9 @@ boolean armFwdLeft135() {
 }
 
 boolean armFwdLeft180() {
-  if(backValue > (armFL180BackVal - armFL180BackTol) && backValue < (armFL180BackVal + armFL180BackTol)) {
-    if(lShoulderValue > (armFL180ShoulderVal - armFL180ShoulderTol) && lShoulderValue < (armFL180ShoulderVal + armFL180ShoulderTol)) {
-      if(lUnderarmValue > (armFL180UnderVal - armFL180UnderTol) && lUnderarmValue < (armFL180UnderVal + armFL180UnderTol)) {
+  if(analogRead(backPin) > (armFL180BackVal - armFL180BackTol) && analogRead(backPin) < (armFL180BackVal + armFL180BackTol)) {
+    if(analogRead(lShoulderPin) > (armFL180ShoulderVal - armFL180ShoulderTol) && analogRead(lShoulderPin) < (armFL180ShoulderVal + armFL180ShoulderTol)) {
+      if(analogRead(lUnderarmPin) > (armFL180UnderVal - armFL180UnderTol) && analogRead(lUnderarmPin) < (armFL180UnderVal + armFL180UnderTol)) {
         return true;
       }
     }
@@ -209,7 +208,7 @@ boolean armFwdLeft180() {
 // ------------------------- Back -------------------------
 
 boolean backStraight() {
-  if(backValue > (backStraightBackVal - backStraightBackTol) && backValue < (backStraightBackVal + backStraightBackTol)) {
+  if(analogRead(backPin) > (backStraightBackVal - backStraightBackTol) && analogRead(backPin) < (backStraightBackVal + backStraightBackTol)) {
     //if(shoulderValue > (backStraightShoulderVal - backStraightShoulderTol) && shoulderValue < (backStraightShoulderVal + backStraightShoulderTol)) {
       //if(underarmValue > (backStraightUnderVal - backStraightUnderTol) && underarmValue < (backStraightUnderVal + backStraightUnderTol)) {
         return true;
@@ -220,7 +219,7 @@ boolean backStraight() {
 }
 
 boolean backBentFwd() {
-  if(backValue > (backBentFBackVal - backBentFBackTol) && backValue < (backBentFBackVal + backBentFBackTol)) {
+  if(analogRead(backPin) > (backBentFBackVal - backBentFBackTol) && analogRead(backPin) < (backBentFBackVal + backBentFBackTol)) {
     //if(shoulderValue > (backBentFShoulderVal - backBentFShoulderTol) && shoulderValue < (backBentFShoulderVal + backBentFShoulderTol)) {
       //if(underarmValue > (backBentFUnderVal - backBentFUnderTol) && underarmValue < (backBentFUnderVal + backBentFUnderTol)) {
         return true;
@@ -231,7 +230,7 @@ boolean backBentFwd() {
 }
 
 boolean backBentBack() {
-  if(backValue > (backBentBBackVal - backBentBBackTol) && backValue < (backBentBBackVal + backBentBBackTol)) {
+  if(analogRead(backPin) > (backBentBBackVal - backBentBBackTol) && analogRead(backPin) < (backBentBBackVal + backBentBBackTol)) {
     //if(shoulderValue > (backBentBShoulderVal - backBentBShoulderTol) && shoulderValue < (backBentBShoulderVal + backBentBShoulderTol)) {
       //if(underarmValue > (backBentBUnderVal - backBentBUnderTol) && underarmValue < (backBentBUnderVal + backBentBUnderTol)) {
         return true;
