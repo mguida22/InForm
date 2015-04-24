@@ -27,12 +27,12 @@ const char* name;
 //Buffer for json parsing
 //Could potentially take up too much memory
 DynamicJsonBuffer jsonBuffer;
-bool updated = false;
+boolean updated = false;
 
 //For smoothing of data
-bool prevBackData[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-bool prevLeftData[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-bool prevRightData[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+boolean prevBackData[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+boolean prevLeftData[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+boolean prevRightData[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 int counter = 0;
 
@@ -45,44 +45,26 @@ int prevRightCount = 0;
 void setup() {
   Serial.begin(9600);
   pinMode(buttonPin, INPUT);
+  rightArmData = "fwd90";
 }
 
 //Run loop continuously
 void loop() {
-  String content = "";
-  char character;
-
-  while(Serial.available()) {
-    character = Serial.read();
-    content.concat(character);
-    updated = true;
-  }
-
-  if (updated) {
-    parseJSON(content);
-  }
+  Serial.print(armFwdRight90());
+  Serial.print(" | ");
+  Serial.print(analogRead(rShoulderPin));
+  Serial.print(" | ");
+  Serial.print(armFR90ShoulderVal);
+  Serial.print(" | ");
+  Serial.print(analogRead(rUnderarmPin));
+  Serial.print(" | ");
+  Serial.print(armFR90UnderVal);
+  Serial.print(" | ");
   
   checkPosition();
   delay(500);
 }
 
-//Parse json string
-void parseJSON(String content) {
-  updated = false;
-  JsonObject& in = jsonBuffer.parseObject(const_cast<char*>(content.c_str()));
-  
-  name = in["name"];
-  leftArmData = in["leftArm"];
-  rightArmData = in["rightArm"];
-  backData = in["back"];
-
-  if (!in.success()) {
-    Serial.println("JSON parsing failed");
-    return;
-  }
-  oldJSON= "";
-  checkPosition();
-}
 
 //Check if the position from json data is right
 void checkPosition() {
@@ -143,26 +125,32 @@ void checkPosition() {
     back = backBentBack();
   }
 
-  //add new data to the arrays
-  prevBackData[counter] = back;
-  prevLeftData[counter] = leftArm;
-  prevRightData[counter] = rightArm;
-
-  if (counter < 10){
+  if (counter < 9){
     counter++;
   } else {
     counter = 0;
   }
 
+  Serial.print(rightArm);
+
+  //add new data to the arrays
+  prevBackData[counter] = back;
+  prevLeftData[counter] = leftArm;
+  prevRightData[counter] = rightArm;
+
+  prevBackCount = 0;
+  prevLeftCount = 0;
+  prevRightCount = 0;
+
   //collect # right
-  for (int i = 0; i < 10; i++){
-    if (prevBackData[i]){
+  for (int i = 0; i < 9; i++){
+    if (prevBackData[i] == true){
       prevBackCount++;
     }
-    if (prevLeftData[i]){
+    if (prevLeftData[i] == true){
       prevLeftCount++;
     }
-    if (prevRightData[i]){
+    if (prevRightData[i] == true){
       prevRightCount++;
     }
   }
@@ -186,26 +174,7 @@ void checkPosition() {
   } else {
     rightArm = false;
   }
-
-
-
-  //build JSON string
-  jsonString = "{\"type\":\"";
-  jsonString += type;
-  jsonString += "\",\"name\":\"";
-  jsonString += name;
-  jsonString += "\",\"leftArm\":\"";
   
-  jsonString += leftArm;
-  jsonString += "\",\"rightArm\":\"";
-  jsonString += rightArm;
-  jsonString += "\",\"back\":\"";
-  jsonString += back;
-  jsonString += "\"}";
-
-  //Print JSON to Serial if different
-  if (oldJSON != jsonString){
-    Serial.println(jsonString);
-    oldJSON = jsonString;
-  }
+  Serial.print(" - ");
+  Serial.println(rightArm);
 }
