@@ -2,7 +2,7 @@
  * SetTolerances
  * Kylie Dale and Michael Guida
  */
-const int EXTRATOL = 100;
+const int EXTRATOL = 0;
 
 void computeTol(int *tols, int *avgs) {
   int i = 100;

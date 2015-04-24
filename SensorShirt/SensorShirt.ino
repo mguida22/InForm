@@ -11,13 +11,13 @@ const int rUnderarmPin = 14;
 const int lShoulderPin = 18;
 const int lUnderarmPin = 17;
 const int buttonPin = 0;
-
+/*
 int backValue = -1;
 int lShoulderValue = -1;
 int rShoulderValue = -1;
 int lUnderarmValue = -1;
 int rUnderarmValue = -1;
-
+*/
 String jsonString;
 String oldJSON;
 
@@ -51,7 +51,7 @@ void loop() {
   }
   
   checkPosition();
-  //delay(10);
+  delay(500);
 }
 
 void parseJSON(String content) {
@@ -132,6 +132,7 @@ void checkPosition() {
   jsonString += "\",\"name\":\"";
   jsonString += name;
   jsonString += "\",\"leftArm\":\"";
+  
   jsonString += leftArm;
   jsonString += "\",\"rightArm\":\"";
   jsonString += rightArm;
