@@ -1,6 +1,6 @@
 # Sensor Shirt
 
-A shirt that helps you learn yoga by giving live feedback on your body position compared to the correct form.
+A shirt that determines your body position and then gives live feedback on your aligned compared to the correct form.
 
 Read the [documentation.md](https://github.com/mguida22/sensor-shirt/blob/master/docs/Documentation.md) file that can be found in the docs folder for more complete information regarding this project.
 
