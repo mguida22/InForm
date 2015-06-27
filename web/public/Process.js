@@ -65,16 +65,12 @@ function runPose() {
 	//builds current pose's JSON
 	if (currentPose === 'plank') {
 		pose = poseList.plank;
-		// pose = poseList["plank"];
 	} else if (currentPose === 'mountainPose') {
 		pose = poseList.mountainPose;
-		// pose = poseList["mountainPose"];
 	} else if (currentPose === 'downwardDog') {
 		pose = poseList.downwardDog;
-		// pose = poseList["downwardDog"];
 	} else if (currentPose === 'warrior') {
 		pose = poseList.warrior;
-		// pose = poseList["warrior"];
 	} else if (poseList[currentPose] !== undefined) {
 		pose = poseList[currentPose];
 	}
