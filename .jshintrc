@@ -6,7 +6,8 @@
     "-Promise",
     "process",
     "module",
-    "require"
+    "require",
+    "socket"
   ],
   "browser": true,
   "boss": true,

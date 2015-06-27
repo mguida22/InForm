@@ -60,7 +60,7 @@ void loop() {
   Serial.print(" | ");
   Serial.print(armFR90UnderVal);
   Serial.print(" | ");
-  
+
   checkPosition();
   delay(500);
 }
@@ -72,7 +72,7 @@ void checkPosition() {
   bool leftArm = false;
   bool rightArm = false;
   bool back = false;
-  
+
   //Evaluate
   //checks left arm data
   if (strcmp(leftArmData, "fwd45")==0) {
@@ -174,7 +174,7 @@ void checkPosition() {
   } else {
     rightArm = false;
   }
-  
+
   Serial.print(" - ");
   Serial.println(rightArm);
 }

@@ -24,7 +24,7 @@ A shirt that helps you learn yoga by giving live feedback on your body position 
 	- Building the Circuit
 	- Shirt Schematics
 - Software Implementation
-- Credits 
+- Credits
 
 ## Inspiration
 We enrolled in CSCI 4830 Technology for Sport and Play at the Univeristy of Colorado at Boulder. The end goal for the class was to create a project to demo at the end of the semester expo. From the beginning we both knew that we wanted to include some type of hardware or wearables in the project. While in the process of brainstorming ideas, we realized we had the opportunity to fill the need for a personal trainer or instructor when learning new activities, and we have filled that role by creating this product. We figure with the introduction of our idea into a variety of activities, we can help people learn the correct form without needing someone else there to give feedback on their positioning. In this way, users can avoid the cost of a personal trainer, while still improving.
@@ -33,7 +33,7 @@ We enrolled in CSCI 4830 Technology for Sport and Play at the Univeristy of Colo
 There are many potential uses for the Sensor Shirt
 
 1. Yoga poses
-	- Beginners to yoga could use this to help them learn certain poses that are commonly done incorrctly. 
+	- Beginners to yoga could use this to help them learn certain poses that are commonly done incorrctly.
 2. Weight lifiting
 	- This could help weight lifters avoid potential injury when not lifting correctly by giving feedback during training.
 3. Controller
@@ -43,9 +43,9 @@ There are many potential uses for the Sensor Shirt
 		- Music
 	- Users could control videogames based on arm and body movements.
 	- Signaling
-		- Users could signal on bikes or other vehicles to ensure safety. 
+		- Users could signal on bikes or other vehicles to ensure safety.
 4. Games
-	- This product could be used for games such as Simon Says since it can map and record body movements to then be repeated. 
+	- This product could be used for games such as Simon Says since it can map and record body movements to then be repeated.
 
 ## Goals
 
@@ -86,14 +86,14 @@ These are our full plans, describing where the project will go in the future. So
 ## Research
 
 ### General
-To begin our research, we began by looking into our competitors, as well as available applications that help users learn yoga. We found that in both of these cases the user was not given real-time feedback during their activity, and even if they were, it gave feedback on information such as muscle fatigue, heartrate, and breathing rate rather than relative positioning of body parts. Due to this research, we knew we needed to find some kind of sensor and microcontroller that could handle the data we needed to obtain, make the product feel like any other excercise clothing, and give feedback to the user to make sure they are performing and improving correctly in order to avoid injury. 
+To begin our research, we began by looking into our competitors, as well as available applications that help users learn yoga. We found that in both of these cases the user was not given real-time feedback during their activity, and even if they were, it gave feedback on information such as muscle fatigue, heartrate, and breathing rate rather than relative positioning of body parts. Due to this research, we knew we needed to find some kind of sensor and microcontroller that could handle the data we needed to obtain, make the product feel like any other excercise clothing, and give feedback to the user to make sure they are performing and improving correctly in order to avoid injury.
 
 ### Sensors
-We researched many different kinds of possible sensors to use for our product. Our initial thought was to use some sort of flex or pressure sensor. These, upon bending, register changes in movement and could give us data to determine a person's position. We went through the process of pricing them out, found they were a bit pricey, and then tried to make our own. This could have been done, but it is a tedious and time consuming process. In addition, the flex sensors were a bit bulky and would be felt by the user upon changing their position. 
+We researched many different kinds of possible sensors to use for our product. Our initial thought was to use some sort of flex or pressure sensor. These, upon bending, register changes in movement and could give us data to determine a person's position. We went through the process of pricing them out, found they were a bit pricey, and then tried to make our own. This could have been done, but it is a tedious and time consuming process. In addition, the flex sensors were a bit bulky and would be felt by the user upon changing their position.
 
-We also researched EMG sensors, which stands for electromyogram and tracks muscle activity. Some of the competing products (primarily Athos) use these. The problem was we were not sure if we could obtain accurate readings about body position based off muscle activity and fatigue. When you move your arm from by your side to above your head, there are so many muslces working throughout just your upper body, and with so much data coming in, it would become complicated to parse and figure out exactly what your body was doing at that time. 
+We also researched EMG sensors, which stands for electromyogram and tracks muscle activity. Some of the competing products (primarily Athos) use these. The problem was we were not sure if we could obtain accurate readings about body position based off muscle activity and fatigue. When you move your arm from by your side to above your head, there are so many muslces working throughout just your upper body, and with so much data coming in, it would become complicated to parse and figure out exactly what your body was doing at that time.
 
-In the end, after talking to our professor and other classmates, we were pointed in the direction of conductive fabric. After some research, we found that this would be less expensive, more accurate, and would enable us to make a more aesthetically pleasing and comfortable product. With the conductive fabric sewn on and connected to the microcontroller via conductive thread, it is essentially unnoticable to the user, meaning it does not interfere with their workouts or movements. 
+In the end, after talking to our professor and other classmates, we were pointed in the direction of conductive fabric. After some research, we found that this would be less expensive, more accurate, and would enable us to make a more aesthetically pleasing and comfortable product. With the conductive fabric sewn on and connected to the microcontroller via conductive thread, it is essentially unnoticable to the user, meaning it does not interfere with their workouts or movements.
 
 ### Microcontrollers
 The selection of a microcontroller was very important to us. We had strict critera due to the nature of our project. The microcontroller would have to be attached to the shirt in some way and remain on the user for the duration of its use so it had to be small and not noticeable. Aside from size, power requirements, price and analog inputs were large deciding factors.
@@ -117,7 +117,7 @@ large for wearable   | small enough to wear   | very small
 ### Competitors
 <!--1 sentence summary of each product.-->
  - [Athos](http://www.liveathos.com)
- 	- Clothing that your muscle effort, heart and breathing rates and sends it to a mobile device. 
+ 	- Clothing that your muscle effort, heart and breathing rates and sends it to a mobile device.
  - [Myo](https://www.thalmic.com/en/myo/)
  	- A gesture control armband.
  - [Myontec](http://www.myontec.com/en/)
@@ -151,7 +151,7 @@ To build the circuit we first laid it all out on a breadboard. The black square 
 
 After testing everything and finalizing our circuit, we constructed a Fritzing diagram of our breadboard. [Fritzing](http://fritzing.org/home/) is an open source prototyping software that allows for easy construction of circuits. We used Fritzing to produce the diagrams above and help us in the process of consolidating our circuit to fit in a smaller container.
 
-With the help of the diagram we laid out the components of the circuit on a small piece of cardboard. This enabled us to arrange our circuit in different ways and draw the connections in. Eventually using both sides of the cardboard we built a fairly small circuit and soldered all of the pieces together. 
+With the help of the diagram we laid out the components of the circuit on a small piece of cardboard. This enabled us to arrange our circuit in different ways and draw the connections in. Eventually using both sides of the cardboard we built a fairly small circuit and soldered all of the pieces together.
 
 ### Connecting to the Shirt
 
@@ -167,7 +167,7 @@ Once connected to the shirt, the circuit is housed in a small case made of foam 
 ### Shirt Design
 The shirt itself is the key to the success of this project. When setting out to design the shirt we had two goals in mind, accurately track body position and make the shirt feel as close to normal as possible. When a user is wearing the shirt we want them to feel as if it is a normal piece of clothing.
 
-The base of our shirt is a skin-tight compression shirt. This provides a comfortable experience that allows us to position our sensors (conductive fabric) tightly against the body. The more each strip of conductive fabric is stretched or relaxed with the movements of the users body, the better the readings. 
+The base of our shirt is a skin-tight compression shirt. This provides a comfortable experience that allows us to position our sensors (conductive fabric) tightly against the body. The more each strip of conductive fabric is stretched or relaxed with the movements of the users body, the better the readings.
 
 <!-- Original plans to use grid of fabric, flex sensors, accelerometers -->
 <!-- Positioning fabric in key areas -->
@@ -176,7 +176,7 @@ The base of our shirt is a skin-tight compression shirt. This provides a comfort
 
 ## Software Implementation
 <!--TODO-MG: write, add code snippets, api calls-->
-<!-- 
+<!--
 	discuss serialport - server - client site connection
 	make diagram of the interactions from user input to displayed feedback
 -->

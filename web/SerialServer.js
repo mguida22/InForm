@@ -67,6 +67,7 @@ io.sockets.on('connection', function (socket) {
 		connected = false;
 		myPort.close(function (err) {
 		    console.log('serial port disconnected');
+				console.error(err);
 		});
 	});
 
