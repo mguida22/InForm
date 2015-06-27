@@ -11,11 +11,11 @@ if len(sys.argv) == 2:
     print "# using " + sys.argv[1] + " " + baudrate
     ser = serial.Serial(sys.argv[1], baudrate)
 elif len(sys.argv) == 3:
-	# if user specified port and baudrate, use them both
+    # if user specified port and baudrate, use them both
     print "# using " + sys.argv[1] + " " + sys.argv[2]
     ser = serial.Serial(sys.argv[1], sys.argv[2])
 else:
-	# if no port and baud rate specified use defaults
+    # if no port and baud rate specified use defaults
     print "# No port and a baudrate specified"
     print "# using hard coded defaults " + port + " " + str(baudrate)
     ser = serial.Serial(port, baudrate)
@@ -27,8 +27,8 @@ f.write('/*\n * Data.h\n * Kylie Dale and Michael Guida\n */\n\n')
 f.close()
 
 while 1:
-	# Append any data from the serial port to the Data.h file
-	f = open('../SensorShirt/Data.h','a')
-	f.write(ser.readline())
+    # Append any data from the serial port to the Data.h file
+    f = open('../SensorShirt/Data.h','a')
+    f.write(ser.readline())
     print('...')
-	f.close()
+    f.close()
