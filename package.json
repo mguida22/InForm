@@ -1,0 +1,22 @@
+{
+  "name": "sensor-shirt",
+  "version": "0.1.0",
+  "description": "A shirt that determines body position",
+  "dependencies": {
+    "express": "*",
+    "socket.io": "*",
+    "serialport": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node web/SerialServer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mguida22/sensor-shirt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mguida22/sensor-shirt/issues"
+  },
+  "homepage": "https://mguida22.github.io/sensor-shirt"
+}
