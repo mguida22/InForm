@@ -54,7 +54,7 @@ io.sockets.on('connection', function (socket) {
 		parser: serialport.parsers.readline("\r\n")
 	});
 	console.log('serial port connected');
-	
+
 	// if there's a socket client, listen for new serial data:
 	myPort.on('data', function (data) {
 		// send a serial event to the web client with the data:
