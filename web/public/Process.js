@@ -64,13 +64,17 @@ function runPose() {
 
 	//builds current pose's JSON
 	if (currentPose === 'plank') {
-		pose = poseList["plank"];
+		pose = poseList.plank;
+		// pose = poseList["plank"];
 	} else if (currentPose === 'mountainPose') {
-		pose = poseList["mountainPose"];
+		pose = poseList.mountainPose;
+		// pose = poseList["mountainPose"];
 	} else if (currentPose === 'downwardDog') {
-		pose = poseList["downwardDog"];
+		pose = poseList.downwardDog;
+		// pose = poseList["downwardDog"];
 	} else if (currentPose === 'warrior') {
-		pose = poseList["warrior"];
+		pose = poseList.warrior;
+		// pose = poseList["warrior"];
 	} else if (poseList[currentPose] !== undefined) {
 		pose = poseList[currentPose];
 	}
@@ -118,34 +122,36 @@ function buildPose() {
 //run all initialization code here
 function init() {
 	//add JSON for each position
-	poseList["plank"] = {
-			'type': 'in',
-			'name': 'plank',
-			'leftArm': 'fwd90',
-			'rightArm': 'fwd90',
-			'back': 'straight'
-		};
-	poseList["mountainPose"] = {
-			'type': 'in',
-			'name': 'mountainPose',
-			'leftArm': 'fwd180',
-			'rightArm': 'fwd180',
-			'back': 'straight'
-		};
-	poseList["downwardDog"] = {
-			'type': 'in',
-			'name': 'downwardDog',
-			'leftArm': 'fwd180',
-			'rightArm': 'fwd180',
-			'back': 'straight'
-		};
-	poseList["warrior"] = {
-			'type': 'in',
-			'name': 'warrior',
-			'leftArm': 'side90',
-			'rightArm': 'side90',
-			'back': 'straight'
-		};
+	poseList = {
+		"plank": {
+			"type": "in",
+			"name": "plank",
+			"leftArm": "fwd90",
+			"rightArm": "fwd90",
+			"back": "straight"
+		},
+		"mountainPose": {
+			"type": "in",
+			"name": "mountainPose",
+			"leftArm": "fwd180",
+			"rightArm": "fwd180",
+			"back": "straight"
+		},
+		"downwardDog": {
+			"type": "in",
+			"name": "downwardDog",
+			"leftArm": "fwd180",
+			"rightArm": "fwd180",
+			"back": "straight"
+		},
+		"warrior": {
+			"type": "in",
+			"name": "warrior",
+			"leftArm": "side90",
+			"rightArm": "side90",
+			"back": "straight"
+		}
+	};
 }
 
 //runs this function when all components have been loaded
