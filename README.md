@@ -8,11 +8,13 @@ Read the [documentation.md](https://github.com/mguida22/sensor-shirt/blob/master
 
 ## Setup
 
+Use [git flow](http://danielkummer.github.io/git-flow-cheatsheet/) for contributing. 
+
 ### Microcontroller
 
 >While you can use any Arduino compatible board, this project was only tested on the Teensy 3.1 and all documentation assumes the use of that board when relevant.
 
-To run the Teensy 3.1 just like an Arduino board, you will need to download the Teensyduino software onto your computer, which can be downloaded from [prjc](https://www.pjrc.com/teensy/td_download.html). 
+To run the Teensy 3.1 just like an Arduino board, you will need to download the Teensyduino software onto your computer, which can be downloaded from [prjc](https://www.pjrc.com/teensy/td_download.html).
 
 From there you can start Arduino and select the correct board you are using. For the first run, you will have to "Verify" the code and then press the reset button on the Teensy when prompted to before programming the board.
 
@@ -57,7 +59,7 @@ For more detailed information regarding the installation of this library refer t
 
 To run the server and web page first check you have all of the modules installed. The order of the next few steps is very important so make sure to follow them exactly.
 
-First run the code on your microcontroller. On the Teensy 3.1 you should be able to press the physical reset button, but running the sketch from the Arduino IDE will always work. 
+First run the code on your microcontroller. On the Teensy 3.1 you should be able to press the physical reset button, but running the sketch from the Arduino IDE will always work.
 
 Once that is running, start your server from the web directory using the following command. Replace the third argument, `/dev/tty.usbmodem728331`, with the port of your arduino. This can be found on the bottom right of the standard Arduino IDE.
 
@@ -86,7 +88,7 @@ This will regenerate the Tolerances.h file that the SensorShirt program uses to 
 
 The position functions can be used to build up complete positions.
 
-For example to assert if the users right arm is raised at 90 degrees forward: 
+For example to assert if the users right arm is raised at 90 degrees forward:
 
 ```C
 armFwdRight90();
