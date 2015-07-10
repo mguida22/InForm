@@ -1,30 +1,13 @@
 /*
  * SerialServer.js
  * Kylie Dale and Michael Guida
+ *
+ * to run: node SerialServer.js /dev/tty.usbmodem728331 (update to your port)
  */
 
-
-/*
-	from http://www.tigoe.com/pcomp/code/arduinowiring/1096/
-	to run: node SerialServer.js /dev/tty.usbmodem728331 (replace with your device port)
-
-	serialServer.js
-	a node.js app to read serial strings and send them to webSocket clients
-	requires:
-		* node.js (http://nodejs.org/)
-		* express.js (http://expressjs.com/)
-		* socket.io (http://socket.io/#how-to-use)
-		* serialport.js (https://github.com/voodootikigod/node-serialport)
-	based on the core examples for socket.io and serialport.js
-	created 21 Aug 2012
-	modified 11 Feb 2014
-	by Tom Igoe
-	Patches and improvements suggested by Steve Klise, Lia Martinez, and Will Jennings
-*/
-
-var serialport = require("serialport"),			// include the serialport library
-	SerialPort  = serialport.SerialPort,		// make a local instance of serial
-	portName = process.argv[2],					// third word of the command line should be serial port name
+var serialport = require("serialport"),
+	SerialPort  = serialport.SerialPort,
+	portName = process.argv[2],
 	express = require('express'),
 	http = require('http'),
 	app = express(),
@@ -53,8 +36,9 @@ io.sockets.on('connection', function (socket) {
 		// look for return and newline at the end of each data packet:
 		parser: serialport.parsers.readline("\r\n")
 	});
+
 	console.log('serial port connected');
-	
+
 	// if there's a socket client, listen for new serial data:
 	myPort.on('data', function (data) {
 		// send a serial event to the web client with the data:
@@ -67,6 +51,7 @@ io.sockets.on('connection', function (socket) {
 		connected = false;
 		myPort.close(function (err) {
 		    console.log('serial port disconnected');
+				console.error(err);
 		});
 	});
 

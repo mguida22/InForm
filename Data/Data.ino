@@ -22,11 +22,11 @@ int i = 0;
 void setup() {
   Serial.begin(9600);
   pinMode(buttonPin, INPUT);
-  
+
   while (!Serial){}
   delay(50);
   setData();
-  
+
   //replace with wait for button press
   Serial.println("Please run the python script and close the serial monitor");
   Serial.println("Press the button when ready (after closing the monitor)");
