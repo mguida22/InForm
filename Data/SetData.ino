@@ -8,19 +8,19 @@ void computeTol(int *tols, int *avgs) {
   int i = 100;
   int val = 0;
 
-  int backLow = 1024;
+  int backLow      = 1024;
   int rShoulderLow = 1024;
   int lShoulderLow = 1024;
   int rUnderarmLow = 1024;
   int lUnderarmLow = 1024;
 
-  int backHigh = 0;
+  int backHigh      = 0;
   int rShoulderHigh = 0;
   int lShoulderHigh = 0;
   int rUnderarmHigh = 0;
   int lUnderarmHigh = 0;
 
-  int backSum = 0;
+  int backSum      = 0;
   int rShoulderSum = 0;
   int lShoulderSum = 0;
   int rUnderarmSum = 0;
@@ -138,21 +138,21 @@ void setData() {
 
   computeTol(&tols[0], &avgs[0]);
 
-  armSRBackTol = tols[0];
+  armSRBackTol     = tols[0];
   armSRShoulderTol = tols[1];
-  armSRUnderTol = tols[2];
+  armSRUnderTol    = tols[2];
 
-  armSLBackTol = tols[0];
+  armSLBackTol     = tols[0];
   armSLShoulderTol = tols[4];
-  armSLUnderTol = tols[5];
+  armSLUnderTol    = tols[5];
 
-  armSRBackVal = avgs[0];
+  armSRBackVal     = avgs[0];
   armSRShoulderVal = avgs[1];
-  armSRUnderVal = avgs[2];
+  armSRUnderVal    = avgs[2];
 
-  armSLBackVal = avgs[3];
+  armSLBackVal     = avgs[3];
   armSLShoulderVal = avgs[4];
-  armSLUnderVal = avgs[5];
+  armSLUnderVal    = avgs[5];
 
   delay(250);
 
@@ -165,21 +165,21 @@ void setData() {
 
   computeTol(&tols[0], &avgs[0]);
 
-  armSR45BackTol = tols[0];
+  armSR45BackTol     = tols[0];
   armSR45ShoulderTol = tols[1];
-  armSR45UnderTol = tols[2];
+  armSR45UnderTol    = tols[2];
 
-  armSL45BackTol = tols[3];
+  armSL45BackTol     = tols[3];
   armSL45ShoulderTol = tols[4];
-  armSL45UnderTol = tols[5];
+  armSL45UnderTol    = tols[5];
 
-  armSR45BackVal = avgs[0];
+  armSR45BackVal     = avgs[0];
   armSR45ShoulderVal = avgs[1];
-  armSR45UnderVal = avgs[2];
+  armSR45UnderVal    = avgs[2];
 
-  armSL45BackVal = avgs[3];
+  armSL45BackVal     = avgs[3];
   armSL45ShoulderVal = avgs[4];
-  armSL45UnderVal = avgs[5];
+  armSL45UnderVal    = avgs[5];
 
   delay(250);
 
@@ -192,21 +192,21 @@ void setData() {
 
   computeTol(&tols[0], &avgs[0]);
 
-  armSR90BackTol = tols[0];
+  armSR90BackTol     = tols[0];
   armSR90ShoulderTol = tols[1];
-  armSR90UnderTol = tols[2];
+  armSR90UnderTol    = tols[2];
 
-  armSL90BackTol = tols[3];
+  armSL90BackTol     = tols[3];
   armSL90ShoulderTol = tols[4];
-  armSL90UnderTol = tols[5];
+  armSL90UnderTol    = tols[5];
 
-  armSR90BackVal = avgs[0];
+  armSR90BackVal     = avgs[0];
   armSR90ShoulderVal = avgs[1];
-  armSR90UnderVal = avgs[2];
+  armSR90UnderVal    = avgs[2];
 
-  armSL90BackVal = avgs[3];
+  armSL90BackVal     = avgs[3];
   armSL90ShoulderVal = avgs[4];
-  armSL90UnderVal = avgs[5];
+  armSL90UnderVal    = avgs[5];
 
   delay(250);
 
@@ -219,21 +219,21 @@ void setData() {
 
   computeTol(&tols[0], &avgs[0]);
 
-  armSR135BackTol = tols[0];
+  armSR135BackTol     = tols[0];
   armSR135ShoulderTol = tols[1];
-  armSR135UnderTol = tols[2];
+  armSR135UnderTol    = tols[2];
 
-  armSL135BackTol = tols[3];
+  armSL135BackTol     = tols[3];
   armSL135ShoulderTol = tols[4];
-  armSL135UnderTol = tols[5];
+  armSL135UnderTol    = tols[5];
 
-  armSR135BackVal = avgs[0];
+  armSR135BackVal     = avgs[0];
   armSR135ShoulderVal = avgs[1];
-  armSR135UnderVal = avgs[2];
+  armSR135UnderVal    = avgs[2];
 
-  armSL135BackVal = avgs[3];
+  armSL135BackVal     = avgs[3];
   armSL135ShoulderVal = avgs[4];
-  armSL135UnderVal = avgs[5];
+  armSL135UnderVal    = avgs[5];
 
   delay(250);
 
@@ -246,21 +246,21 @@ void setData() {
 
   computeTol(&tols[0], &avgs[0]);
 
-  armSR180BackTol = tols[0];
+  armSR180BackTol     = tols[0];
   armSR180ShoulderTol = tols[1];
-  armSR180UnderTol = tols[2];
+  armSR180UnderTol    = tols[2];
 
-  armSL180BackTol = tols[3];
+  armSL180BackTol     = tols[3];
   armSL180ShoulderTol = tols[4];
-  armSL180UnderTol = tols[5];
+  armSL180UnderTol    = tols[5];
 
-  armSR180BackVal = avgs[0];
+  armSR180BackVal     = avgs[0];
   armSR180ShoulderVal = avgs[1];
-  armSR180UnderVal = avgs[2];
+  armSR180UnderVal    = avgs[2];
 
-  armSL180BackVal = avgs[3];
+  armSL180BackVal     = avgs[3];
   armSL180ShoulderVal = avgs[4];
-  armSL180UnderVal = avgs[5];
+  armSL180UnderVal    = avgs[5];
 
   // -------- Arms fwd 45 degrees --------
   Serial.println("Put your arms 45 degrees forward \nPress button when ready");
@@ -271,21 +271,21 @@ void setData() {
 
   computeTol(&tols[0], &avgs[0]);
 
-  armFR45BackTol = tols[0];
+  armFR45BackTol     = tols[0];
   armFR45ShoulderTol = tols[1];
-  armFR45UnderTol = tols[2];
+  armFR45UnderTol    = tols[2];
 
-  armFL45BackTol = tols[3];
+  armFL45BackTol     = tols[3];
   armFL45ShoulderTol = tols[4];
-  armFL45UnderTol = tols[5];
+  armFL45UnderTol    = tols[5];
 
-  armFR45BackVal = avgs[0];
+  armFR45BackVal     = avgs[0];
   armFR45ShoulderVal = avgs[1];
-  armFR45UnderVal = avgs[2];
+  armFR45UnderVal    = avgs[2];
 
-  armFL45BackVal = avgs[3];
+  armFL45BackVal     = avgs[3];
   armFL45ShoulderVal = avgs[4];
-  armFL45UnderVal = avgs[5];
+  armFL45UnderVal    = avgs[5];
 
   delay(250);
 
@@ -298,21 +298,21 @@ void setData() {
 
   computeTol(&tols[0], &avgs[0]);
 
-  armFR90BackTol = tols[0];
+  armFR90BackTol     = tols[0];
   armFR90ShoulderTol = tols[1];
-  armFR90UnderTol = tols[2];
+  armFR90UnderTol    = tols[2];
 
-  armFL90BackTol = tols[3];
+  armFL90BackTol     = tols[3];
   armFL90ShoulderTol = tols[4];
-  armFL90UnderTol = tols[5];
+  armFL90UnderTol    = tols[5];
 
-  armFR90BackVal = avgs[0];
+  armFR90BackVal     = avgs[0];
   armFR90ShoulderVal = avgs[1];
-  armFR90UnderVal = avgs[2];
+  armFR90UnderVal    = avgs[2];
 
-  armFL90BackVal = avgs[3];
+  armFL90BackVal     = avgs[3];
   armFL90ShoulderVal = avgs[4];
-  armFL90UnderVal = avgs[5];
+  armFL90UnderVal    = avgs[5];
 
 
   delay(250);
@@ -326,21 +326,21 @@ void setData() {
 
   computeTol(&tols[0], &avgs[0]);
 
-  armFR135BackTol = tols[0];
+  armFR135BackTol     = tols[0];
   armFR135ShoulderTol = tols[1];
-  armFR135UnderTol = tols[2];
+  armFR135UnderTol    = tols[2];
 
-  armFL135BackTol = tols[3];
+  armFL135BackTol     = tols[3];
   armFL135ShoulderTol = tols[4];
-  armFL135UnderTol = tols[5];
+  armFL135UnderTol    = tols[5];
 
-  armFR135BackVal = avgs[0];
+  armFR135BackVal     = avgs[0];
   armFR135ShoulderVal = avgs[1];
-  armFR135UnderVal = avgs[2];
+  armFR135UnderVal    = avgs[2];
 
-  armFL135BackVal = avgs[3];
+  armFL135BackVal     = avgs[3];
   armFL135ShoulderVal = avgs[4];
-  armFL135UnderVal = avgs[5];
+  armFL135UnderVal    = avgs[5];
 
   delay(250);
 
@@ -353,21 +353,21 @@ void setData() {
 
   computeTol(&tols[0], &avgs[0]);
 
-  armFR180BackTol = tols[0];
+  armFR180BackTol     = tols[0];
   armFR180ShoulderTol = tols[1];
-  armFR180UnderTol = tols[2];
+  armFR180UnderTol    = tols[2];
 
-  armFL180BackTol = tols[3];
+  armFL180BackTol     = tols[3];
   armFL180ShoulderTol = tols[4];
-  armFL180UnderTol = tols[5];
+  armFL180UnderTol    = tols[5];
 
-  armFR180BackVal = avgs[0];
+  armFR180BackVal     = avgs[0];
   armFR180ShoulderVal = avgs[1];
-  armFR180UnderVal = avgs[2];
+  armFR180UnderVal    = avgs[2];
 
-  armFL180BackVal = avgs[3];
+  armFL180BackVal     = avgs[3];
   armFL180ShoulderVal = avgs[4];
-  armFL180UnderVal = avgs[5];
+  armFL180UnderVal    = avgs[5];
 
   delay(250);
 
@@ -381,7 +381,6 @@ void setData() {
   computeTol(&tols[0], &avgs[0]);
 
   backStraightBackTol = tols[0];
-
   backStraightBackVal = avgs[0];
 
   delay(250);
@@ -396,7 +395,6 @@ void setData() {
   computeTol(&tols[0], &avgs[0]);
 
   backBentFBackTol = tols[0];
-
   backBentFBackVal = avgs[0];
 
   delay(250);
@@ -411,7 +409,6 @@ void setData() {
   computeTol(&tols[0], &avgs[0]);
 
   backBentBBackTol = tols[0];
-
   backBentBBackVal = avgs[0];
 
   delay(250);

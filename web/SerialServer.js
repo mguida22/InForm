@@ -6,14 +6,14 @@
  */
 
 var serialport = require("serialport"),
-	SerialPort  = serialport.SerialPort,
-	portName = process.argv[2],
-	express = require('express'),
-	http = require('http'),
-	app = express(),
-	server = http.createServer(app),
-	io = require('socket.io').listen(server),
-	connected = false;
+		express    = require('express'),
+		http       = require('http'),
+		SerialPort = serialport.SerialPort,
+		portName   = process.argv[2],
+		app        = express(),
+		server     = http.createServer(app),
+		io         = require('socket.io').listen(server),
+		connected  = false;
 
 app.get('/', function (req, res) {
 	res.sendFile(__dirname + '/public/index.html');

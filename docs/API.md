@@ -1,5 +1,4 @@
 ## Using Position Functions
-<!-- Update Position Functions documentation to reflect changes -->
 
 The position functions can be used to build up complete positions.
 
@@ -26,12 +25,14 @@ boolean plank() {
 ## Function Calls
 
 ### General Functions
+
 Function Call     | Return Type | Description
 ----------------- | ----------- | -----------
 setVariables()    | void        | Runs the calibration process for the shirt and sets all position variables
 computeAvg()      | int*        | Takes 100 readings over 5 seconds of all values from the shirt and averages them
 
 ### Position Functions
+
 Function Call     | Return Type | Description
 ----------------- | ----------- | -----------
 armAtSideRight()  | boolean     | asserts if the user's right arm is at their side
