@@ -65,12 +65,13 @@ To stop the server, simply type control-c in your terminal.
 
 ## Updating the Tolerances
 
-Before attempting to run the Tolerances program, be sure you have all of the required modules installed.
+Before attempting to run the data program, be sure you have all of the required modules installed.
 
-Once you have done that, upload the Tolerances sketch to your Teensy. After the sketch has finished uploading run the SaveTolerances.py file, which can be ran through the command line as follows. Replace the third argument with your the port of your Arduino and the fourth with your baud rate (most likely 9600).
+Once you have done that, upload the Data sketch to your Teensy. After the sketch has finished uploading run the SaveData.py file, which can be ran through the command line as follows. Replace the third argument with your the port of your Arduino and the fourth with your baud rate (most likely 9600).
 
 ```
-$ python SaveTolerances.py /dev/tty.usbmodem728331 9600
+$ cd Data
+$ python SaveData.py /dev/tty.usbmodem728331 9600
 ```
 
-This will regenerate the Tolerances.h file that the SensorShirt program uses to compute positions.
+This will regenerate the Data.h file that the SensorShirt program uses to compute positions. An example of a data file can be seen at [docs/sample/Data.h](https://github.com/mguida22/sensor-shirt/blob/prep-for-public/docs/sample/Data.h).
