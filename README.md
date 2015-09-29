@@ -1,10 +1,8 @@
 # Sensor Shirt
 
-[Trello](https://trello.com/b/cZ3whJig/inform)
+A shirt that determines your body position and then gives live feedback on your alignment compared to the correct form.
 
-A shirt that determines your body position and then gives live feedback on your aligned compared to the correct form.
-
-Read the [documentation.md](https://github.com/mguida22/sensor-shirt/blob/master/docs/Documentation.md) file that can be found in the docs folder for more complete information regarding this project.
+Read the [wiki](https://github.com/mguida22/sensor-shirt/wiki) file for more complete information regarding this project.
 
 ## Setup
 
@@ -19,16 +17,10 @@ To run the Teensy 3.1 just like an Arduino board, you will need to download the 
 From there you can start Arduino and select the correct board you are using. For the first run, you will have to "Verify" the code and then press the reset button on the Teensy when prompted to before programming the board.
 
 ### Node Packages
-<!-- TODO: create package.json file for all required node libraries -->
-There are a few node packages required to run server for the sensor shirt. If you do not have it already, you will need to download the latest version of Node.js, which can be found on the official [node site](http://nodejs.org).
 
-After installing node, or if you already have it, in your command line run `npm install` or run each of the following commands to install all required packages.
+There are a few node packages required to run server for the sensor shirt. If you do not have it already, you will need to download the latest version of Node.js, which can be found on the [Node.js site](http://nodejs.org).
 
-```
-$ npm express
-$ npm socket.io
-$ npm serialport
-```
+After installing node, or if you already have it, in your command line run `npm install` to install the required packages.
 
 ### Python Module
 
@@ -61,7 +53,7 @@ To run the server and web page first check you have all of the modules installed
 
 First run the code on your microcontroller. On the Teensy 3.1 you should be able to press the physical reset button, but running the sketch from the Arduino IDE will always work.
 
-Once that is running, start your server from the web directory using the following command. Replace the third argument, `/dev/tty.usbmodem728331`, with the port of your arduino. This can be found on the bottom right of the standard Arduino IDE.
+Once that is running, start your server from the web directory using the following command. Replace the third argument, `/dev/tty.usbmodem728331`, with the port of your Arduino. This can be found on the bottom right of the standard Arduino IDE.
 
 ```
 $ node SerialServer.js /dev/tty.usbmodem728331
@@ -75,7 +67,7 @@ To stop the server, simply type control-c in your terminal.
 
 Before attempting to run the Tolerances program, be sure you have all of the required modules installed.
 
-Once you have done that, upload the Tolerances sketch to your Teensy. After the sketch has finished uploading run the SaveTolerances.py file, which can be ran through the command line as follows. Replace the third arguement with your the port of your arduino and the fourth with your baud rate (most likely 9600).
+Once you have done that, upload the Tolerances sketch to your Teensy. After the sketch has finished uploading run the SaveTolerances.py file, which can be ran through the command line as follows. Replace the third argument with your the port of your Arduino and the fourth with your baud rate (most likely 9600).
 
 ```
 $ python SaveTolerances.py /dev/tty.usbmodem728331 9600
