@@ -74,4 +74,4 @@ $ cd Data
 $ python SaveData.py /dev/tty.usbmodem728331 9600
 ```
 
-This will regenerate the Data.h file that the SensorShirt program uses to compute positions. An example of a data file can be seen at [docs/sample/Data.h](https://github.com/mguida22/sensor-shirt/blob/prep-for-public/docs/sample/Data.h).
+This will regenerate the Data.h file that the SensorShirt program uses to compute positions. An example of a data file can be seen at [docs/sample/Data.h](https://github.com/mguida22/sensor-shirt/blob/master/docs/sample/Data.h).
