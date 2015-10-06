@@ -1,5 +1,5 @@
 /*
- * Sensor Shirt
+ * InForm
  * Kylie Dale and Michael Guida
  */
 #include "ArduinoJson.h";

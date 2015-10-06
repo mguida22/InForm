@@ -21,14 +21,14 @@ else:
     ser = serial.Serial(port, baudrate)
 
 # Clear files old contents
-f = open('../SensorShirt/Data.h', 'w')
+f = open('../InForm/Data.h', 'w')
 # Add header comments
 f.write('/*\n * Data.h\n * Kylie Dale and Michael Guida\n */\n\n')
 f.close()
 
 while 1:
     # Append any data from the serial port to the Data.h file
-    f = open('../SensorShirt/Data.h','a')
+    f = open('../InForm/Data.h','a')
     f.write(ser.readline())
     print('...')
     f.close()

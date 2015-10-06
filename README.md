@@ -1,8 +1,8 @@
-# Sensor Shirt
+# InForm
 
 A shirt that determines your body position and then gives live feedback on your alignment compared to the correct form.
 
-Read the [wiki](https://github.com/mguida22/sensor-shirt/wiki) file for more complete information regarding this project.
+Read the [wiki](https://github.com/mguida22/InForm/wiki) file for more complete information regarding this project.
 
 ## Setup
 
@@ -74,4 +74,4 @@ $ cd Data
 $ python SaveData.py /dev/tty.usbmodem728331 9600
 ```
 
-This will regenerate the Data.h file that the SensorShirt program uses to compute positions. An example of a data file can be seen at [docs/sample/Data.h](https://github.com/mguida22/sensor-shirt/blob/master/docs/sample/Data.h).
+This will regenerate the Data.h file that the InForm program uses to compute positions. An example of a data file can be seen at [docs/sample/Data.h](https://github.com/mguida22/InForm/blob/master/docs/sample/Data.h).
