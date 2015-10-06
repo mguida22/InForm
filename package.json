@@ -1,0 +1,21 @@
+{
+  "name": "InForm",
+  "version": "0.1.0",
+  "description": "A shirt that determines body position",
+  "dependencies": {
+    "express": "^4.13.3",
+    "serialport": "^1.7.4",
+    "socket.io": "^1.3.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node web/SerialServer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mguida22/InForm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mguida22/InForm/issues"
+  }
+}

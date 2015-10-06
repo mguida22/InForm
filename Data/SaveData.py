@@ -1,26 +1,34 @@
 import serial
 import sys
 
-port = "/dev/tty.usbmodem728331" # Default Port - replace with yours
-baudrate = 9600 # Default baud rate - probably no need to change
+# Default port and baudrate
+port = "/dev/tty.usbmodem728331"
+baudrate = 9600
 
-if len(sys.argv) == 3:
-	# if user specified port and baudrate, use it
+if len(sys.argv) == 2:
+	# if user specified port use it and the default baudrate
+    print "# No baudrate specified"
+    print "# using " + sys.argv[1] + " " + baudrate
+    ser = serial.Serial(sys.argv[1], baudrate)
+elif len(sys.argv) == 3:
+    # if user specified port and baudrate, use them both
+    print "# using " + sys.argv[1] + " " + sys.argv[2]
     ser = serial.Serial(sys.argv[1], sys.argv[2])
 else:
-	# if no port and baud rate specified use defaults
+    # if no port and baud rate specified use defaults
     print "# No port and a baudrate specified"
     print "# using hard coded defaults " + port + " " + str(baudrate)
     ser = serial.Serial(port, baudrate)
 
-# Clear files old contents and header comments
-f = open('../SensorShirt/Data.h', 'w')
+# Clear files old contents
+f = open('../InForm/Data.h', 'w')
+# Add header comments
 f.write('/*\n * Data.h\n * Kylie Dale and Michael Guida\n */\n\n')
 f.close()
 
 while 1:
-	# Append any data from the serial port to the Data.h file
-	f = open('../SensorShirt/Data.h','a')
-	f.write(ser.readline())
-	print('...')
-	f.close()
+    # Append any data from the serial port to the Data.h file
+    f = open('../InForm/Data.h','a')
+    f.write(ser.readline())
+    print('...')
+    f.close()

@@ -1,54 +1,54 @@
 /*
- * Sensor Shirt
+ * InForm
  * Kylie Dale and Michael Guida
  */
 #include "ArduinoJson.h";
 #include "Data.h";
 
-//Initialize Pins
-const int backPin = 16;
+// Initialize Pins
+const int backPin      = 16;
 const int rShoulderPin = 15;
 const int rUnderarmPin = 14;
 const int lShoulderPin = 18;
 const int lUnderarmPin = 17;
-const int buttonPin = 0;
+const int buttonPin    = 0;
 
-//Strings of json to update
+// Strings of json to update
 String jsonString;
 String oldJSON;
 
-//Data for json
+// Data for json
 const char* leftArmData;
 const char* rightArmData;
 const char* backData;
 String type = "out";
 const char* name;
 
-//Buffer for json parsing
-//Could potentially take up too much memory
+// Buffer for json parsing
+// Could potentially take up too much memory for the Arduino boards
 DynamicJsonBuffer jsonBuffer;
 boolean updated = false;
 
-//For smoothing of data
-boolean prevBackData[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-boolean prevLeftData[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+// For smoothing of data
+boolean prevBackData[10]  = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+boolean prevLeftData[10]  = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 boolean prevRightData[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 int counter = 0;
 
-int prevBackCount = 0;
-int prevLeftCount = 0;
+int prevBackCount  = 0;
+int prevLeftCount  = 0;
 int prevRightCount = 0;
 
 
-//Setup
+// Setup
 void setup() {
   Serial.begin(9600);
   pinMode(buttonPin, INPUT);
   rightArmData = "fwd90";
 }
 
-//Run loop continuously
+// Run loop continuously
 void loop() {
   Serial.print(armFwdRight90());
   Serial.print(" | ");
@@ -60,21 +60,21 @@ void loop() {
   Serial.print(" | ");
   Serial.print(armFR90UnderVal);
   Serial.print(" | ");
-  
+
   checkPosition();
   delay(500);
 }
 
 
-//Check if the position from json data is right
+// Check if the position from json data is right
 void checkPosition() {
-  //Define variables to use to build our JSON
-  bool leftArm = false;
+  // Define variables to use to build our JSON
+  bool leftArm  = false;
   bool rightArm = false;
-  bool back = false;
-  
-  //Evaluate
-  //checks left arm data
+  bool back     = false;
+
+  // Evaluate
+  // checks left arm data
   if (strcmp(leftArmData, "fwd45")==0) {
     leftArm = armFwdLeft45();
   } else if (strcmp(leftArmData, "fwd90")==0) {
@@ -95,7 +95,7 @@ void checkPosition() {
     leftArm = armAtSideLeft();
   }
 
-  //checks right arm data
+  // checks right arm data
   if (strcmp(rightArmData, "fwd45")==0) {
     rightArm = armFwdRight45();
   } else if (strcmp(rightArmData, "fwd90")==0) {
@@ -116,7 +116,7 @@ void checkPosition() {
     rightArm = armAtSideRight();
   }
 
-  //check back data
+  // check back data
   if (strcmp(backData, "straight")==0) {
     back = backStraight();
   } else if (strcmp(backData, "fwd")==0) {
@@ -133,16 +133,16 @@ void checkPosition() {
 
   Serial.print(rightArm);
 
-  //add new data to the arrays
-  prevBackData[counter] = back;
-  prevLeftData[counter] = leftArm;
+  // add new data to the arrays
+  prevBackData[counter]  = back;
+  prevLeftData[counter]  = leftArm;
   prevRightData[counter] = rightArm;
 
-  prevBackCount = 0;
-  prevLeftCount = 0;
+  prevBackCount  = 0;
+  prevLeftCount  = 0;
   prevRightCount = 0;
 
-  //collect # right
+  // collect # right
   for (int i = 0; i < 9; i++){
     if (prevBackData[i] == true){
       prevBackCount++;
@@ -155,8 +155,8 @@ void checkPosition() {
     }
   }
 
-  //smooth data
-  //if 50% of previous entries are correct
+  // smooth data
+  // if 50% of previous entries are correct
   if (prevBackCount >= 5){
     back = true;
   } else {
@@ -174,7 +174,7 @@ void checkPosition() {
   } else {
     rightArm = false;
   }
-  
+
   Serial.print(" - ");
   Serial.println(rightArm);
 }
