@@ -1,4 +1,5 @@
 /node_modules
 /docs/videos
+/SensorShirt/Data.h
 *.out
 *.mp4

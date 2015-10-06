@@ -4,14 +4,14 @@
  */
 #include "Variables.h";
 
-const int backPin = 16;
+const int backPin      = 16;
 const int rShoulderPin = 15;
 const int rUnderarmPin = 14;
 const int lShoulderPin = 18;
 const int lUnderarmPin = 17;
-const int buttonPin = 0;
+const int buttonPin    = 0;
 
-int backValue = -1;
+int backValue      = -1;
 int lShoulderValue = -1;
 int rShoulderValue = -1;
 int lUnderarmValue = -1;

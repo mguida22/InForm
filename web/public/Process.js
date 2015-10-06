@@ -15,11 +15,8 @@ socket.on('serialEvent', function (data) {
 	displayData(data);
 });
 
-//Displays status to user
+// Displays status to user
 function displayData(data) {
-	//force correct response from shirt
-	//data.rightArm = 1;
-
 	if (data.name === 'plank') {
 		document.getElementById("feedbackTitle").innerHTML = "Feedback : Plank";
 	} else if (data.name === 'mountainPose') {
@@ -58,11 +55,11 @@ function displayData(data) {
 }
 
 
-//Builds JSON object from selected pose
+// Builds JSON object from selected pose
 function runPose() {
 	var currentPose = $('input[name="currentPose"]:checked').val();
 
-	//builds current pose's JSON
+	// builds current pose's JSON
 	if (currentPose === 'plank') {
 		pose = poseList.plank;
 	} else if (currentPose === 'mountainPose') {
@@ -78,7 +75,7 @@ function runPose() {
 	console.log('outgoing');
 	console.log(pose);
 
-	//send pose data to server
+	// send pose data to server
 	socket.emit('data', pose);
 }
 
@@ -115,9 +112,9 @@ function buildPose() {
 	}
 }
 
-//run all initialization code here
+// run all initialization code here
 function init() {
-	//add JSON for each position
+	// add JSON for each position
 	poseList = {
 		"plank": {
 			"type": "in",
